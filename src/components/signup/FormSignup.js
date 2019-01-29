@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Form, Grid, Header, Image, Message, Segment, Radio } from 'semantic-ui-react'
-import { styles } from 'ansi-colors'
+
+import './signup.css'
 
 const LoginForm = () => (
-  <div className="login-form">
+  <div>
     <Grid textAlign="center" verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
+      <Grid.Column className="card-signup">
         <Header as="h2" color="teal" textAlign="center">
           <Image src="/assets/images/logo-small.jpg" /> Create an account
         </Header>
@@ -24,12 +25,12 @@ const LoginForm = () => (
               placeholder="Password"
               type="password"
             />
-            <Form.Group className="user-type" style={styles}>
-              <Image src="/assets/images/whistle.svg" style={{ width: 75, height: 75 }} />
-              <Image src="/assets/images/athlete.svg" style={{ width: 75, height: 75 }} />
+            <Form.Group className="user-type">
+              <Image src="/assets/images/whistle.svg" className="role-icon" />
+              <Image src="/assets/images/athlete.svg" className="role-icon" />
             </Form.Group>
 
-            <Form.Group widths="six">
+            <Form.Group className="role">
               <Radio label="As a Coach" />
               <Radio label="Become an Athlete" />
             </Form.Group>

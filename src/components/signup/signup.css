@@ -1,0 +1,14 @@
+.card-signup {
+  max-width: 450px;
+}
+
+.user-type,
+.role {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.role-icon {
+  width: 75px;
+  height: 75px;
+}
