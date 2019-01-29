@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="680px" viewBox="0 0 1280 680" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>BG_RU</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.2709666%" y1="100%" x2="49.2709666%" y2="-2.51534904e-15%" id="linearGradient-1">
+            <stop stop-color="#409BE5" offset="0%"></stop>
+            <stop stop-color="#40C4E5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="1280" height="680"></rect>
+    </defs>
+    <g id="FINAL" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BG_RU">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Rectangle-11" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <path d="M1289.07893,590 C990.850103,482.816457 818.879488,397.110599 773.167088,332.882427 C727.454689,268.654255 759.453934,157.693446 869.164824,0 L1493,0 L1493,590 L1289.07893,590 Z" id="Path-4" fill="#40BBE5" mask="url(#mask-3)"></path>
+            <path d="M-40,147 C239.555063,211.952988 395.738017,271.939897 428.548861,326.960726 C461.359705,381.981556 408.740255,495.661314 270.690511,668 L-40,890.403901 L-40,147 Z" id="Path-3" fill="#409EE5" mask="url(#mask-3)"></path>
+        </g>
+    </g>
+</svg>
