@@ -1,0 +1,6 @@
+.jumbo-image {
+  background-image: url('/assets/images/login-banner.jpg');
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,17 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Form, Grid, Header, Image, Message, Segment, Radio } from 'semantic-ui-react'
+import { Button, Form, Grid, Image, Message, Segment, Radio } from 'semantic-ui-react'
 
 import './signup.css'
 
 const LoginForm = () => (
   <div>
-    <Grid textAlign="center" verticalAlign="middle">
+    <Grid textAlign="center">
       <Grid.Column className="card-signup">
-        <Header as="h2" color="teal" textAlign="center">
-          <Image src="/assets/images/logo-small.jpg" /> Create an account
-        </Header>
-        <Form size="large">
+        <Message attached header="Join us !" content="Create an Account" />
+        <Form attached size="medium">
           <Segment stacked>
             <Form.Group widths="equal">
               <Form.Input fluid icon="user" iconPosition="left" placeholder="First Name" />
