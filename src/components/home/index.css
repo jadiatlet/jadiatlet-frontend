@@ -1,0 +1,27 @@
+.homeBackground {
+  background-image: url("/assets/home/home-backgroud.svg");
+  height: 50vw;
+  /* width: 100vw; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 10px 10px -10px #000000 inset;
+}
+
+.homeSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side img {
+  height: 500px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-side .section-title {
+  font-size: 4em !important;
+}
