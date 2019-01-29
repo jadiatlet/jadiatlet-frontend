@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 
 import { Container } from 'semantic-ui-react'
 
-const Home = () => {
+const Root = () => {
   return (
     <Container>
       <Navbar />
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Root
