@@ -7,4 +7,4 @@ This is jadiatlet client-side repository
 ## Team
 
 - [Panji Gumelar](http://github.com/panjiggm) as Team Leader and Fullstack Developer
-- [Masagus Hariadi Arief](http://github.com/hariadi) as Fron-End Developer
+- [Masagus Hariadi Arief](http://github.com/hariadiarief) as Fron-End Developer
