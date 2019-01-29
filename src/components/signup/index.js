@@ -1,11 +1,15 @@
 import React from 'react'
+import { Container } from 'semantic-ui-react'
+
 import Navbar from '../Navbar'
+import FormSignup from './FormSignup'
 
 const SignUp = () => {
   return (
-    <div>
+    <Container>
       <Navbar />
-    </div>
+      <FormSignup />
+    </Container>
   )
 }
 
