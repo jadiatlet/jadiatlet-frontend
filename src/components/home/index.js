@@ -12,6 +12,7 @@ const Home = () => {
       <Container>
         <Navbar />
       </Container>
+      
       <div className="homeBackground">
         <Grid centered columns={2}>
           <Grid.Column floated="left">
