@@ -13,7 +13,7 @@ class Navbar extends Component {
     return (
       <Menu secondary>
         <Menu.Item>
-          <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
+          <Image size="mini" src="/assets/images/logo.svg" />
         </Menu.Item>
         <Menu.Item
           name="home"
@@ -22,7 +22,7 @@ class Navbar extends Component {
           as={Link}
           to="/"
         >
-          Home
+          Jadiatlet
         </Menu.Item>
 
         <Menu.Menu position="right">

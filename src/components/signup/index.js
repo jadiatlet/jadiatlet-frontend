@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Grid, Header } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Navbar from '../Navbar'
+import InnerFooter from '../InnerFooter'
 import FormSignup from './FormSignup'
 
 import './signup.css'
@@ -15,12 +16,8 @@ const SignUp = () => {
           <Grid centered columns={2}>
             <Grid.Column floated="left">
               <div className="header-signup">
-                <Header as="h1" color="grey">
-                  Register Lo Bangsat !
-                </Header>
-                <Header as="h3" color="grey">
-                  Heroes journey, start from here..
-                </Header>
+                <h1>Register Lo Bangsat !</h1>
+                <h3>Heroes journey, start from here..</h3>
               </div>
             </Grid.Column>
             <Grid.Column floated="right">
@@ -28,6 +25,7 @@ const SignUp = () => {
             </Grid.Column>
           </Grid>
         </div>
+        <InnerFooter />
       </Container>
     </div>
   )

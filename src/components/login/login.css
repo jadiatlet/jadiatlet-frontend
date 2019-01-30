@@ -1,6 +1,24 @@
 .jumbo-image {
   background-image: url('/assets/images/login-banner.jpg');
-  /* height: 100%; */
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 60px;
+}
+
+.top-login {
+  margin: 100px 0;
+}
+
+.header-login {
+  margin-top: 45px;
+}
+
+.header-login h1 {
+  font-size: 60px;
+  color: #fff;
+}
+
+.header-login h3 {
+  font-size: 30px;
+  color: #eee;
 }

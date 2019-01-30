@@ -1,8 +1,8 @@
 .banner-image {
   background-image: url('/assets/images/asphalt-empty.jpg');
-  /* height: 100%; */
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 30px;
 }
 
 .top-signup {
@@ -10,8 +10,17 @@
 }
 
 .header-signup {
-  color: #eee;
   margin-top: 120px;
+}
+
+.header-signup h1 {
+  font-size: 50px;
+  color: #666;
+}
+
+.header-signup h3 {
+  font-size: 25px;
+  color: #888;
 }
 
 .card-signup {
