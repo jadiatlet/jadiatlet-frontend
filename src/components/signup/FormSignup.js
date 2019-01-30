@@ -6,7 +6,7 @@ import './signup.css'
 
 const LoginForm = () => (
   <div>
-    <Grid textAlign="center">
+    <Grid textAlign="center" verticalAlign="middle">
       <Grid.Column className="card-signup">
         <Message header="Join us !" content="Create an Account" />
         <Form>

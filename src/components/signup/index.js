@@ -5,8 +5,6 @@ import Navbar from '../Navbar'
 import InnerFooter from '../InnerFooter'
 import FormSignup from './FormSignup'
 
-import './signup.css'
-
 const SignUp = () => {
   return (
     <div className="banner-image">
