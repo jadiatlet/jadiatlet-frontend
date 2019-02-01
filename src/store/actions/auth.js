@@ -1,8 +1,7 @@
 import Endpoint from '../apis/Endpoint'
 import Cookies from 'js-cookie'
-// import { dispatch } from 'rxjs/internal/observable/range'
 
-export default (signUp = data => dispatch => {
+export const signUp = data => dispatch => {
   Endpoint.post('/auth/signup', data)
     .then(response => {
       if (response.status === 200) {
@@ -19,4 +18,4 @@ export default (signUp = data => dispatch => {
         payload: false
       })
     })
-})
+}
