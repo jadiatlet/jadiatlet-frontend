@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Divider, Menu, Image, Header } from 'semantic-ui-react'
+import { Container, Divider, Menu, Header } from 'semantic-ui-react'
 
 const InnerFooter = () => {
   return (

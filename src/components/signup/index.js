@@ -25,8 +25,8 @@ const SignUp = () => {
             </Grid>
           </div>
         </Container>
-        <InnerFooter />
       </div>
+      <InnerFooter />
     </Fragment>
   )
 }
