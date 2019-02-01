@@ -6,6 +6,8 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SIGN_UP_STATUS':
-      return {}
+      return { isSignUpSuccess: action.payload }
+    default:
+      return state
   }
 }
