@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import { Image, Grid, Container } from "semantic-ui-react";
 
-import Navbar from "../Navbar";
+import NavbarSticky from "../NavbarSticky";
+// import MenuBarUser from "../MenuBarUser";
+// import Navbar from "../Navbar";
+
 import FormOnHome from "./FormOnHome";
 
 import "./index.css";
@@ -10,9 +13,11 @@ const Home = () => {
   return (
     <Fragment>
       <Container>
-        <Navbar />
+        {/* <MenuBarUser /> */}
+        <NavbarSticky />
+        {/* <Navbar /> */}
       </Container>
-      
+
       <div className="homeBackground">
         <Grid centered columns={2}>
           <Grid.Column floated="left">

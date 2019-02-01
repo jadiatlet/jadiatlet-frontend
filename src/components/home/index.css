@@ -1,6 +1,6 @@
 .homeBackground {
   background-image: url("/assets/home/home-backgroud.svg");
-  height: 50vw;
+  height: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 10px 10px -10px #000000 inset;
@@ -15,5 +15,5 @@
 }
 
 .section-title {
-  font-size: 2,8em !important;
+  font-size: 2, 8em !important;
 }
