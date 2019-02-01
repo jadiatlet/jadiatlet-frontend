@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Form, Container, Image, Menu, Visibility } from "semantic-ui-react";
+import { Input, Container, Image, Menu, Visibility } from "semantic-ui-react";
 
 const fixedMenuStyle = {
   backgroundColor: "#fff",
@@ -13,22 +13,11 @@ const menuStyle = {
   borderRadius: 0,
   boxShadow: "none",
   marginBottom: "1em",
+  //   marginTop: "1em",
   transition: "box-shadow 0.5s ease, padding 0.5s ease"
 };
-const countryOptions = [
-  { text: "Jakarta Selatan" },
-  { text: "Jakarta Barat" },
-  { text: "Jakarta Timur" },
-  { text: "Depok" }
-];
 
-const sportOptions = [
-  { text: "Lempar Kuda" },
-  { text: "Lompat Pendek" },
-  { text: "Angkat Kunam" }
-];
-
-class NavbarLogedin extends Component {
+class NavbarSticky extends Component {
   state = { activeItem: "", menuFixed: false, overlayFixed: false };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -62,7 +51,7 @@ class NavbarLogedin extends Component {
             </Menu.Item>
             <Menu.Item
               name="home"
-              active={activeItem === "home"}
+              active={activeItem === "" || activeItem === "/"}
               onClick={this.handleItemClick}
               as={Link}
               to="/"
@@ -72,54 +61,32 @@ class NavbarLogedin extends Component {
 
             <Menu.Menu position="right">
               <Menu.Item>
-                <Form.Select
-                  placeholder="Select your country"
-                  options={countryOptions}
-                />
+                <Input icon="search" placeholder="Search..." />
               </Menu.Item>
-              <Menu.Item>
-                <Form.Select
-                  placeholder="Select your sport"
-                  options={sportOptions}
-                />
+              <Menu.Item
+                name="signup"
+                active={activeItem === "signup"}
+                onClick={this.handleItemClick}
+                as={Link}
+                to="/signup"
+              >
+                Signup
+              </Menu.Item>
+              <Menu.Item
+                name="login"
+                active={activeItem === "login"}
+                onClick={this.handleItemClick}
+                as={Link}
+                to="/login"
+              >
+                Login
               </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
       </Visibility>
-      //--------------------
-
-      // <Menu secondary>
-      //   <Menu.Item>
-      //     <Image size="mini" src="/assets/images/logo.svg" />
-      //   </Menu.Item>
-      //   <Menu.Item
-      //     name="home"
-      //     active={activeItem === "home"}
-      //     onClick={this.handleItemClick}
-      //     as={Link}
-      //     to="/"
-      //   >
-      //     Jadiatlet
-      //   </Menu.Item>
-
-      //   <Menu.Menu position="right">
-      //     <Menu.Item>
-      //       <Form.Select
-      //         placeholder="Select your country"
-      //         options={countryOptions}
-      //       />
-      //     </Menu.Item>
-      //     <Menu.Item>
-      //       <Form.Select
-      //         placeholder="Select your sport"
-      //         options={sportOptions}
-      //       />
-      //     </Menu.Item>
-      //   </Menu.Menu>
-      // </Menu>
     );
   }
 }
 
-export default NavbarLogedin;
+export default NavbarSticky;
