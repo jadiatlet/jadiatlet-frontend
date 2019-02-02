@@ -7,6 +7,8 @@ import NavbarSticky from "../NavbarSticky";
 
 import FormOnHome from "./FormOnHome";
 import TopSection from "./TopSection";
+import MiddleSection from "./MiddleSection";
+import MiddleCont from "./MiddleCont";
 
 import "./index.css";
 
@@ -26,10 +28,8 @@ const Home = () => {
         <Divider horizontal>jadiatlet</Divider>
         <TopSection />
       </Container>
-      <div className="top-background"> Play Like Pro </div>
-      <Container>
-        {/* <div className="middle-background"></div> */}
-      </Container>
+      <MiddleSection />
+      <MiddleCont />
     </div>
   );
 };
