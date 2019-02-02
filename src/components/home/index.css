@@ -1,10 +1,15 @@
 .homeBackground {
   background-image: url("/assets/home/coach_soccer.png");
-  height: 100vh;
+  height: 100%;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 10px 10px -10px #000000 inset;
   padding-top: 10px;
+}
+
+.form-style {
+  margin: 90px 0 150px 250px;
 }
 
 .container-FormOnHome {
@@ -15,5 +20,33 @@
 }
 
 .section-title {
-  font-size: 2, 8em !important;
+  font-size: 30pt !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+/* ------------------------- Top Section Style ------------------------------- */
+
+.top-style {
+  padding: 5%;
+}
+
+.top-background {
+  background-image: url("/assets/home/american-footbal.jpg");
+  height: 550px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
+}
+
+.middle-background {
+  background-image: url("/assets/home/home1.svg");
+  height: 700px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
 }

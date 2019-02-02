@@ -1,16 +1,20 @@
-import React from 'react'
-import { Grid, Button, Form, Header } from 'semantic-ui-react'
+import React from "react";
+import { Grid, Button, Form, Header } from "semantic-ui-react";
 
-import './index.css'
+import "./index.css";
 
 const countryOptions = [
-  { text: 'Jakarta Selatan' },
-  { text: 'Jakarta Barat' },
-  { text: 'Jakarta Timur' },
-  { text: 'Depok' }
-]
+  { text: "Jakarta Selatan" },
+  { text: "Jakarta Barat" },
+  { text: "Jakarta Timur" },
+  { text: "Depok" }
+];
 
-const sportOptions = [{ text: 'Lempar Kuda' }, { text: 'Lompat Pendek' }, { text: 'Angkat Kunam' }]
+const sportOptions = [
+  { text: "Lempar Kuda" },
+  { text: "Lompat Pendek" },
+  { text: "Angkat Kunam" }
+];
 
 const FormOnHome = () => (
   <div className="container-FormOnHome">
@@ -18,7 +22,7 @@ const FormOnHome = () => (
       Ready for Jadi Atlet ?
     </Header>
 
-    <Form success>
+    <Form success  >
       <Grid>
         <Grid.Row>
           <Grid.Column width={10}>
@@ -44,6 +48,6 @@ const FormOnHome = () => (
       </Grid>
     </Form>
   </div>
-)
+);
 
-export default FormOnHome
+export default FormOnHome;
