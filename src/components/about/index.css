@@ -1,0 +1,19 @@
+.about-header {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 50px;
+  color: #ccc;
+  padding: 40px 0;
+}
+
+.about-distance {
+  margin: 60px 0;
+}
+
+.about-mission h5 {
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.about-team-header {
+  background: #ccc;
+}

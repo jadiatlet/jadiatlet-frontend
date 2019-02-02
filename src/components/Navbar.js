@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { Menu, Image, Input } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import { Menu, Image, Input } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
-  state = { activeItem: "" };
+  state = { activeItem: '' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem } = this.state
 
     return (
       <Menu secondary>
@@ -17,7 +17,7 @@ class Navbar extends Component {
         </Menu.Item>
         <Menu.Item
           name="home"
-          active={activeItem === "home"}
+          active={activeItem === 'home'}
           onClick={this.handleItemClick}
           as={Link}
           to="/"
@@ -26,12 +26,10 @@ class Navbar extends Component {
         </Menu.Item>
 
         <Menu.Menu position="right">
-          <Menu.Item>
-            <Input icon="search" placeholder="Search..." />
-          </Menu.Item>
+          <Menu.Item />
           <Menu.Item
             name="signup"
-            active={activeItem === "signup"}
+            active={activeItem === 'signup'}
             onClick={this.handleItemClick}
             as={Link}
             to="/signup"
@@ -40,7 +38,7 @@ class Navbar extends Component {
           </Menu.Item>
           <Menu.Item
             name="login"
-            active={activeItem === "login"}
+            active={activeItem === 'login'}
             onClick={this.handleItemClick}
             as={Link}
             to="/login"
@@ -49,8 +47,8 @@ class Navbar extends Component {
           </Menu.Item>
         </Menu.Menu>
       </Menu>
-    );
+    )
   }
 }
 
-export default Navbar;
+export default Navbar
