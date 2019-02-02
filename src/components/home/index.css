@@ -25,13 +25,12 @@
   font-weight: bold !important;
 }
 
-/* ------------------------- Top Section Style ------------------------------- */
+/* ------------------------- Second Section ------------------------------- */
 
 .top-style {
-  padding: 5%;
+  padding: 0 5% 5% 5%;
+  background: #fafafa;
 }
-
-/* ------------------------- Middle Section Style ------------------------------- */
 
 .middle-background {
   background-image: url("/assets/home/american-footbal.jpg");
@@ -54,8 +53,6 @@
   color: #ffffff;
 }
 
-/* ------------------------- Middle Section Style ------------------------------- */
-
 .background-style {
   margin-top: -260px;
   background-image: url("/assets/home/boxing.jpg");
@@ -71,4 +68,81 @@
   padding: 250px 350px 150px 0px;
   font-size: 35pt;
   color: #ffffff;
+}
+
+.title-main {
+  font-size: 25pt;
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: -20px;
+}
+
+.title-secondary {
+  font-family: 'Lato', sans-serif;
+  color: #838282;
+}
+
+.title-slave {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+.third-title1 {
+  font-size: 30pt;
+  padding: 5% 0 1% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------- Third Section ------------------------------- */
+
+.third-style {
+  margin: 5%;
+}
+
+.third-title {
+  font-size: 30pt;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------- Fourth Section ------------------------------- */
+
+
+.background-style2 {
+  margin-top: -200px;
+  background-image: url("/assets/home/ball.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0% 0%, 48% 28%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 48% 28%, 100% 0%, 100% 100%, 0% 100%);
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth-title {
+  font-size: 30pt;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-inside {
+  padding-top: 100px;
+  color: #fafafa;
+}
+
+.font-inside {
+  font-size: 40pt;
+  letter-spacing: 5pt;
+}
+
+.picture-style {
+  padding-left: 135px 
 }

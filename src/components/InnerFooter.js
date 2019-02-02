@@ -12,7 +12,7 @@ const InnerFooter = () => {
 
         <Menu text size="tiny">
           <Menu.Item name="Home" as={Link} to="/" />
-          <Menu.Item name="Social Media" href="www.youtube.com" />
+          <Menu.Item name="Social Media" target="_blank" href="https://github.com/jadiatlet" />
           <Menu.Menu position="right">
             <Menu.Item name="Terms" as={Link} to="/terms" />
             <Menu.Item name="Help" as={Link} to="/help" />

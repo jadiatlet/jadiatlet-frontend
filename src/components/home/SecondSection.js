@@ -1,38 +1,58 @@
 import React, { Fragment } from "react";
-import { Divider, Grid, Container, Image } from "semantic-ui-react";
+import { Grid, Container, Image, Divider, Icon, Step } from "semantic-ui-react";
 
 import "./index.css";
 
 const SecondSection = () => (
   <Fragment>
     {/* --------------------- PENJELASAN JADI ATLET----------------------------- */}
-    <div>
-      <Container>
-        <Divider horizontal>jadiatlet</Divider>
-        <div className="top-style">
-          <Grid centered columns={2}>
-            <Grid.Column floated="left">
-              <Image src="/assets/home/banner_img.png" size="large" />
-            </Grid.Column>
-            <Grid.Column floated="right">
-              <Container>
-                <h1>Lorem Ipsum</h1>
-                <h3>Dorlor sit amet</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa strong. Cum
-                  sociis natoque penatibus et magnis dis parturient montes.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa strong. Cum
-                  sociis natoque penatibus et magnis dis parturient montes.
-                </p>
-              </Container>
-            </Grid.Column>
-          </Grid>
-        </div>
-      </Container>
+    <div className="top-style">
+      <div className="third-title1">
+        <p align="center">
+          " A great coach can lead you to a place where you don't need him any
+          more. "
+        </p>
+      </div>
+      <Divider horizontal>
+        <Icon name="angle down" />
+      </Divider>
+      <Grid centered columns={2}>
+        <Grid.Column floated="left">
+          <Image src="/assets/home/banner_img.png" size="large" />
+        </Grid.Column>
+        <Grid.Column floated="right">
+          <Container>
+            <h1 className="title-main">Jadiatlet</h1>
+            <h3 className="title-secondary">
+              Just 3 step to become an athlete
+            </h3>
+            <h3 className="title-slave">1. Select your sports</h3>
+            <h3 className="title-slave">2. Choose and chat to your coach</h3>
+            <h3 className="title-slave">3. Deal !</h3>
+            <Step.Group ordered> 
+              <Step active>
+                <Step.Content>
+                  <Step.Title>Select</Step.Title>
+                  <Step.Description>Choose your sprts</Step.Description>
+                </Step.Content>
+              </Step>
+
+              <Step active>
+                <Step.Content>
+                  <Step.Title>Chat</Step.Title>
+                  <Step.Description>Make appointment</Step.Description>
+                </Step.Content>
+              </Step>
+
+              <Step active>
+                <Step.Content>
+                  <Step.Title>Deal !</Step.Title>
+                </Step.Content>
+              </Step>
+            </Step.Group>
+          </Container>
+        </Grid.Column>
+      </Grid>
     </div>
 
     {/* --------------------- PARALLAX CONTENT ----------------------------- */}

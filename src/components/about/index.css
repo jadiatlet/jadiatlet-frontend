@@ -1,5 +1,7 @@
 .about-header {
-  font-family: 'Major Mono Display', monospace;
+  /* font-family: 'Major Mono Display', monospace; */
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 15px;
   font-size: 50px;
   color: #ccc;
   padding: 40px 0;
