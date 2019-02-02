@@ -1,32 +1,83 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link, Redirect } from 'react-router-dom'
+import { logIn, setSignUpStatus } from '../../store/actions/auth'
 import { Button, Form, Grid, Message } from 'semantic-ui-react'
 
-const LoginForm = () => (
-  <div>
-    <Grid textAlign="center" verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Message header="Welcome Back Bitch!" content="Login to Your Account" />
-        <Form>
-          <Form.Input fluid icon="mail" iconPosition="left" placeholder="E-mail address" />
-          <Form.Input
-            fluid
-            icon="lock"
-            iconPosition="left"
-            placeholder="Password"
-            type="password"
-          />
+class LoginForm extends Component {
+  state = { email: '', password: '' }
 
-          <Button color="teal" fluid size="large">
-            Login
-          </Button>
-        </Form>
-        <Message>
-          New to us? <Link to="/signup">Sign Up</Link>
-        </Message>
-      </Grid.Column>
-    </Grid>
-  </div>
-)
+  componentDidMount() {
+    if (this.props.isSignUpSuccess) {
+      this.props.setSignUpStatus(false)
+    }
+  }
 
-export default LoginForm
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    console.log(this.state)
+    this.props.logIn(this.state)
+  }
+
+  render() {
+    const { email, password } = this.state
+    const { isAuthenticated } = this.props
+    console.log(isAuthenticated)
+    if (isAuthenticated) {
+      return <Redirect to="/user" />
+    }
+
+    return (
+      <div>
+        <Grid textAlign="center" verticalAlign="middle">
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Message header="Welcome Back Bitch!" content="Login to Your Account" />
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Input
+                fluid
+                icon="mail"
+                iconPosition="left"
+                type="email"
+                placeholder="E-mail address"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                fluid
+                icon="lock"
+                iconPosition="left"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+
+              <Button type="submits" color="teal" fluid size="large">
+                Login
+              </Button>
+            </Form>
+            <Message>
+              New to us? <Link to="/signup">Sign Up</Link>
+            </Message>
+          </Grid.Column>
+        </Grid>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  isSignUpSuccess: state.auth.isSignUpSuccess,
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(
+  mapStateToProps,
+  { logIn, setSignUpStatus }
+)(LoginForm)

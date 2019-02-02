@@ -19,3 +19,23 @@ export const signUp = data => dispatch => {
       })
     })
 }
+
+export const setSignUpStatus = value => ({
+  type: 'SET_SIGN_UP_STATUS',
+  payload: value
+})
+
+export const logIn = data => dispatch => {
+  Endpoint.post('/auth/login', data)
+    .then(response => {
+      if (response.status === 200) {
+        Cookies.set('token', response.data.token, { expires: 7 })
+        dispatch({
+          type: 'SIGN_IN'
+        })
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}

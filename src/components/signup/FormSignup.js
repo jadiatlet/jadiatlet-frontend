@@ -1,22 +1,27 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import { Button, Form, Grid, Image, Message, Radio } from 'semantic-ui-react'
+import { Button, Form, Grid, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/auth'
 
 import './signup.css'
 
+const options = [
+  { key: 'c', text: 'Coach', value: 'coach' },
+  { key: 's', text: 'Student', value: 'student' }
+]
+
 class FormSignup extends Component {
   state = {
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     password: '',
-    checked: false
+    user_type: ''
   }
 
-  handleChange = (e, { value }) => {
-    this.setState({ [e.target.name]: e.target.value, value })
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit = async e => {
@@ -26,11 +31,11 @@ class FormSignup extends Component {
   }
 
   render() {
-    const { firstName, lastName, email, password, checked } = this.state
+    const { first_name, last_name, email, password, user_type } = this.state
     const { isAuthenticated, isSignUpSuccess } = this.props
 
     if (isSignUpSuccess) {
-      return <Redirect to="/signin" />
+      return <Redirect to="/login" />
     }
 
     return (
@@ -45,8 +50,8 @@ class FormSignup extends Component {
                   icon="user"
                   iconPosition="left"
                   placeholder="First Name"
-                  name="firstName"
-                  value={firstName}
+                  name="first_name"
+                  value={first_name}
                   onChange={this.handleChange}
                 />
                 <Form.Input
@@ -54,8 +59,8 @@ class FormSignup extends Component {
                   icon="user"
                   iconPosition="left"
                   placeholder="Last Name"
-                  name="lastName"
-                  value={lastName}
+                  name="last_name"
+                  value={last_name}
                   onChange={this.handleChange}
                 />
               </Form.Group>
@@ -64,6 +69,7 @@ class FormSignup extends Component {
                 icon="mail"
                 iconPosition="left"
                 placeholder="E-mail address"
+                type="email"
                 name="email"
                 value={email}
                 onChange={this.handleChange}
@@ -78,27 +84,20 @@ class FormSignup extends Component {
                 value={password}
                 onChange={this.handleChange}
               />
-              <Form.Group className="user-type">
+              {/* <Form.Group className="user-type">
                 <Image src="/assets/images/whistle.svg" className="role-icon" />
                 <Image src="/assets/images/athlete.svg" className="role-icon" />
-              </Form.Group>
+              </Form.Group> */}
 
-              <Form.Group className="role">
-                <Radio
-                  label="As a Coach"
-                  name="coachRole"
-                  value={this.state.value === 'coach'}
-                  // checked={checked}
-                  onChange={this.handleChange}
-                />
-                <Radio
-                  label="Become an Athlete"
-                  name="userRole"
-                  value={this.state.value === 'user'}
-                  // checked={checked}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
+              <Form.Input
+                fluid
+                icon="lock"
+                iconPosition="left"
+                placeholder="e.g coach/student"
+                name="user_type"
+                value={user_type}
+                onChange={this.handleChange}
+              />
 
               <Button type="submit" color="teal" fluid size="large">
                 Sign Up
