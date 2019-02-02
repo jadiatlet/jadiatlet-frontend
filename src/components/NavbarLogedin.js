@@ -88,36 +88,6 @@ class NavbarLogedin extends Component {
         </Menu>
       </Visibility>
       //--------------------
-
-      // <Menu secondary>
-      //   <Menu.Item>
-      //     <Image size="mini" src="/assets/images/logo.svg" />
-      //   </Menu.Item>
-      //   <Menu.Item
-      //     name="home"
-      //     active={activeItem === "home"}
-      //     onClick={this.handleItemClick}
-      //     as={Link}
-      //     to="/"
-      //   >
-      //     Jadiatlet
-      //   </Menu.Item>
-
-      //   <Menu.Menu position="right">
-      //     <Menu.Item>
-      //       <Form.Select
-      //         placeholder="Select your country"
-      //         options={countryOptions}
-      //       />
-      //     </Menu.Item>
-      //     <Menu.Item>
-      //       <Form.Select
-      //         placeholder="Select your sport"
-      //         options={sportOptions}
-      //       />
-      //     </Menu.Item>
-      //   </Menu.Menu>
-      // </Menu>
     );
   }
 }
