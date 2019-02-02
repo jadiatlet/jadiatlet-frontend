@@ -1,0 +1,15 @@
+.userCourseBackgroud {
+  /* background-image: url("/assets/home/home-backgroud.svg"); */
+  background-color: azure;
+  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 10px 10px -10px #000000 inset;
+  padding-top: 10px;
+}
+.mainSection {
+  background-color: aquamarine;
+  height: 50vh;
+  margin-top: -11vh;
+  padding-top: 12vh;
+}
