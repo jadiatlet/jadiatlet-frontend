@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Form, Container, Image, Menu, Visibility } from "semantic-ui-react";
+import { Button, Container, Image, Menu, Visibility } from "semantic-ui-react";
 
 const fixedMenuStyle = {
   backgroundColor: "#fff",
@@ -72,22 +72,12 @@ class NavbarLogedin extends Component {
 
             <Menu.Menu position="right">
               <Menu.Item>
-                <Form.Select
-                  placeholder="Select your country"
-                  options={countryOptions}
-                />
-              </Menu.Item>
-              <Menu.Item>
-                <Form.Select
-                  placeholder="Select your sport"
-                  options={sportOptions}
-                />
+                <Button negative>Sign Out</Button>
               </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
       </Visibility>
-      //--------------------
     );
   }
 }
