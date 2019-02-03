@@ -6,26 +6,26 @@ import InnerFooter from '../../components/InnerFooter'
 
 import './index.css'
 
-const Help = () => {
+const Terms = () => {
   return (
     <div>
       <Container>
         <Navbar />
       </Container>
-      <div className="help-distance" />
+      <div className="terms-distance" />
       <Divider />
       <Container textAlign="center">
-        <p className="help-header">JADIATLET</p>
+        <p className="terms-header">JADIATLET</p>
       </Container>
       <Divider />
-      <div className="help-distance" />
-      <Container textAlign="center" className="help-mission">
-        <h5>HELP</h5>
+      <div className="terms-distance" />
+      <Container textAlign="center" className="terms-mission">
+        <h5>OUR TERM</h5>
         <h2>Terms of Service</h2>
         <p>
-          Maybe you <strong>Need</strong> our help.
+          Sorry, our terms is <strong>Under Construction,</strong> Please check leter, thanks
         </p>
-        <div className="help-distance" />
+        <div className="terms-distance" />
         <Grid columns="equal" textAlign="left">
           <Grid.Row>
             <Grid.Column>
@@ -39,4 +39,4 @@ const Help = () => {
   )
 }
 
-export default Help
+export default Terms

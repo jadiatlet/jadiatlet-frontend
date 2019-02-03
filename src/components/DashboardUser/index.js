@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
-import { Container, Tab } from "semantic-ui-react";
+import { Container, Tab } from 'semantic-ui-react'
 
-import CourseUser from "./Course/index";
-import ProfileUser from "./Profile";
-import NavbarLogedin from "../NavbarLogedin";
+import CourseUser from './Course/index'
+import ProfileUser from './Profile'
+import NavbarLogedin from '../NavbarLogedin'
 
 const panes = [
   {
-    menuItem: "Course",
+    menuItem: 'Course',
     render: () => (
       <Tab.Pane>
         <CourseUser />
@@ -16,14 +16,14 @@ const panes = [
     )
   },
   {
-    menuItem: "Profile",
+    menuItem: 'Profile',
     render: () => (
       <Tab.Pane>
         <ProfileUser />
       </Tab.Pane>
     )
   }
-];
+]
 
 const DashboardUser = () => {
   return (
@@ -33,7 +33,7 @@ const DashboardUser = () => {
         <Tab panes={panes} />
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default DashboardUser;
+export default DashboardUser
