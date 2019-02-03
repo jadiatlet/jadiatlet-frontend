@@ -96,7 +96,7 @@ const About = () => {
                   </span>
                   <p>
                     I'am a noobie One Piece fans.. I always read One Piece manga during working on
-                    my final project, Ha ha ha ha ha hayy
+                    <strong>jadiatlet</strong> project, Ha ha ha ha hayy
                   </p>
                   my journey is still a long way to complete the whole one piece chapter, maybe it
                   will take 3 more months wikwikwik
