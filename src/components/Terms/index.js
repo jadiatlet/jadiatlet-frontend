@@ -15,18 +15,17 @@ const Terms = () => {
       <div className="terms-distance" />
       <Divider />
       <Container textAlign="center">
-        <p className="about-header">JADIATLET</p>
+        <p className="terms-header">JADIATLET</p>
       </Container>
       <Divider />
-      <div className="about-distance" />
-      <Container textAlign="center" className="about-mission">
-        <h5>OUR MISION</h5>
-        <h3>Develop Online Marketplace Wich Allows Users to Search & Register for Sport Classes</h3>
+      <div className="terms-distance" />
+      <Container textAlign="center" className="terms-mission">
+        <h5>OUR TERM</h5>
+        <h2>Terms of Service</h2>
         <p>
-          We build products for <strong>Sport Trainers and Athlete Wannabe.</strong> And those who
-          aspire to become one.
+          Sorry, our terms is <strong>Under Construction,</strong> Please check leter, thanks
         </p>
-        <div className="about-distance" />
+        <div className="terms-distance" />
         <Grid columns="equal" textAlign="left">
           <Grid.Row>
             <Grid.Column>
