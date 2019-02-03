@@ -1,11 +1,7 @@
 .homeBackground {
-  background-image: url("/assets/home/coach_soccer.png");
-  height: 100%;
-  /* background-attachment: fixed; */
-  background-repeat: no-repeat;
+  background-image: url("/assets/home/tiger-woods.jpg");
   background-size: cover;
-  box-shadow: 0 10px 10px -10px #000000 inset;
-  padding-top: 10px;
+  /* padding-top: 0.5px; */
 }
 
 .form-style {
@@ -72,17 +68,17 @@
 
 .title-main {
   font-size: 25pt;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   margin-bottom: -20px;
 }
 
 .title-secondary {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #838282;
 }
 
 .title-slave {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -109,7 +105,6 @@
 }
 
 /* ------------------------- Fourth Section ------------------------------- */
-
 
 .background-style2 {
   margin-top: -200px;
@@ -144,5 +139,5 @@
 }
 
 .picture-style {
-  padding-left: 135px 
+  padding-left: 135px;
 }
