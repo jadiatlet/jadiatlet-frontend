@@ -8,6 +8,7 @@ import LogIn from './components/login'
 import dashboarUser from './components/dashboard-user/course'
 import About from './components/about'
 import Contact from './components/contact'
+import Terms from './components/terms'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path="/user" component={dashboarUser} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/terms" component={Terms} />
           </div>
         </Router>
       </Fragment>
