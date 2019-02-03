@@ -1,7 +1,7 @@
 .homeBackground {
   background-image: url("/assets/home/tiger-woods.jpg");
   background-size: cover;
-  /* padding-top: 0.5px; */
+  padding-top: 0.5px;
 }
 
 .form-style {
