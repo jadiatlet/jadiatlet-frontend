@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Segment } from "semantic-ui-react";
 
 const ProfileUser = () => {
-  return <span>its just user's profile</span>;
+  return (
+    <Fragment>
+      <Segment>
+        <div>this is contens of profile tab on user</div>
+      </Segment>
+    </Fragment>
+  );
 };
 
 export default ProfileUser;
