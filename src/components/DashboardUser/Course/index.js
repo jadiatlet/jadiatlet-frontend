@@ -1,8 +1,5 @@
-import React, { Fragment } from "react";
-import { Container } from "semantic-ui-react";
+import React from "react";
 
-import NavbarLogedin from "../../NavbarLogedin";
-import MenuBarUSer from "..";
 import "../index.css";
 
 const CourseUser = () => {

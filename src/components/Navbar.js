@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Image, Input } from "semantic-ui-react";
+import { Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {

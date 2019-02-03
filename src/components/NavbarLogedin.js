@@ -15,18 +15,6 @@ const menuStyle = {
   marginBottom: "1em",
   transition: "box-shadow 0.5s ease, padding 0.5s ease"
 };
-const countryOptions = [
-  { text: "Jakarta Selatan" },
-  { text: "Jakarta Barat" },
-  { text: "Jakarta Timur" },
-  { text: "Depok" }
-];
-
-const sportOptions = [
-  { text: "Lempar Kuda" },
-  { text: "Lompat Pendek" },
-  { text: "Angkat Kunam" }
-];
 
 class NavbarLogedin extends Component {
   state = { activeItem: "", menuFixed: false, overlayFixed: false };
