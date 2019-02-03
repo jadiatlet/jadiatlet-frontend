@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
-import { Container, Grid } from 'semantic-ui-react'
+import React, { Fragment } from "react";
+import { Container, Grid } from "semantic-ui-react";
 
-import Navbar from '../Navbar'
-import InnerFooter from '../InnerFooter'
-import FormSignup from './FormSignup'
+import NavbarSticky from "../NavbarSticky";
+import InnerFooter from "../InnerFooter";
+import FormSignup from "./FormSignup";
 
 const SignUp = () => {
   return (
     <Fragment>
       <div className="banner-image">
+        <NavbarSticky />
         <Container>
-          <Navbar />
           <div className="top-signup">
             <Grid centered columns={2}>
               <Grid.Column floated="left">
@@ -28,7 +28,7 @@ const SignUp = () => {
       </div>
       <InnerFooter />
     </Fragment>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

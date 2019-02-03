@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react'
-import { Container, Grid } from 'semantic-ui-react'
+import React, { Fragment } from "react";
+import { Container, Grid } from "semantic-ui-react";
 
-import Navbar from '../Navbar'
-import InnerFooter from '../InnerFooter'
-import FormLogin from './FormLogin'
+import NavbarSticky from "../NavbarSticky";
+import InnerFooter from "../InnerFooter";
+import FormLogin from "./FormLogin";
 
-import './login.css'
+import "./login.css";
 
 const LogIn = () => {
   return (
     <Fragment>
       <div className="jumbo-image">
         <Container>
-          <Navbar />
+          <NavbarSticky />
           <div className="top-login">
             <Grid centered columns={2}>
               <Grid.Column floated="left">
@@ -30,7 +30,7 @@ const LogIn = () => {
       </div>
       <InnerFooter />
     </Fragment>
-  )
-}
+  );
+};
 
-export default LogIn
+export default LogIn;
