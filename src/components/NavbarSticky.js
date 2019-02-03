@@ -61,9 +61,6 @@ class NavbarSticky extends Component {
             </Menu.Item>
 
             <Menu.Menu position="right">
-              {/* <Menu.Item>
-                <Input icon="search" placeholder="Search..." />
-              </Menu.Item> */}
               <Menu.Item
                 name="signup"
                 active={activeItem === "signup"}
