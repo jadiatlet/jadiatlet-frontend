@@ -2,8 +2,8 @@ import React from "react";
 
 import { Container, Tab } from "semantic-ui-react";
 
-import CourseUser from "./course/index";
-import ProfileUser from "./profile";
+import CourseUser from "./Course/index";
+import ProfileUser from "./Profile";
 import NavbarLogedin from "../NavbarLogedin";
 
 const panes = [
