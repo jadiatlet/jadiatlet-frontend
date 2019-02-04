@@ -132,13 +132,10 @@
 
 /* ------------------------- Fourth Section ------------------------------- */
 
-<<<<<<< HEAD:src/components/home/index.css
 .fourth-style {
   background: #fafafa;
 }
 
-=======
->>>>>>> f9077fd718eee45598b365ef135d9291a261cadd:src/components/Home/index.css
 .background-style2 {
   margin-top: -200px;
   background-image: url("/assets/home/ball.jpg");
@@ -172,7 +169,6 @@
 }
 
 .picture-style {
-<<<<<<< HEAD:src/components/home/index.css
   padding-left: 135px 
 }
 
@@ -194,7 +190,5 @@
 
 .card3 {
   padding-left: 45px !important ;
-=======
   padding-left: 135px;
->>>>>>> f9077fd718eee45598b365ef135d9291a261cadd:src/components/Home/index.css
 }
