@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Grid, Image , Icon , Button } from "semantic-ui-react";
+import { Segment, Grid, Image, Icon, Button } from "semantic-ui-react";
 
 import "./Guess.css";
 
@@ -8,7 +8,7 @@ const SearchResult = () => {
     <Segment>
       <Grid columns={2}>
         <Grid.Row stretched>
-          <Grid.Column textAlign='center' width={8}>
+          <Grid.Column textAlign="center" width={8}>
             <Segment>
               <Image
                 src="https://react.semantic-ui.com/images/avatar/large/nan.jpg"
@@ -30,14 +30,14 @@ const SearchResult = () => {
               <h4 className="guest-subtitle-style">1</h4>
               <h4 className="guest-subtitle-style">2</h4>
             </Segment>
-            <Segment>
-              <Button color='teal' animated='fade'>
+            <div>
+              <Button floated="right" color="teal" animated="fade">
                 <Button.Content visible>Add Course</Button.Content>
                 <Button.Content hidden>
-                  <Icon name='arrow right' />
+                  <Icon name="arrow right" />
                 </Button.Content>
               </Button>
-            </Segment>
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>
