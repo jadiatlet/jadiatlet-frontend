@@ -1,14 +1,19 @@
-import React, { Fragment } from "react";
-import { Segment } from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Segment } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
-const ProfileUser = () => {
+const ProfileUser = props => {
   return (
     <Fragment>
       <Segment>
-        <div>this is contens of profile tab on user</div>
+        <div>{props.id}</div>
       </Segment>
     </Fragment>
-  );
-};
+  )
+}
 
-export default ProfileUser;
+const mapStateToProps = state => ({
+  id: state.auth.id
+})
+
+export default connect(mapStateToProps)(ProfileUser)

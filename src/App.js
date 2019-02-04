@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Axios from 'axios'
+import Cookies from 'js-cookie'
+import { connect } from 'react-redux'
+
+import { signInAction } from './store/actions/auth'
 
 // Routes
 import Home from './components/Home'
@@ -12,6 +17,23 @@ import DashboardUser from './components/DashboardUser'
 import Help from './components/Help'
 
 class App extends Component {
+  async componentDidMount() {
+    try {
+      const token = Cookies.get('token')
+
+      if (token) {
+        const response = await Axios.get(`${process.env.REACT_APP_API_URL}/auth/verify`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        if (response.status !== 500) {
+          this.props.signInAction(response.data.user)
+        }
+      }
+    } catch (err) {}
+  }
   render() {
     return (
       <Fragment>
@@ -32,4 +54,7 @@ class App extends Component {
   }
 }
 
-export default App
+export default connect(
+  null,
+  { signInAction }
+)(App)

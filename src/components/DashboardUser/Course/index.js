@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import { Segment } from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Segment } from 'semantic-ui-react'
 
-import "../index.css";
+import '../index.css'
 
 const CourseUser = () => {
   return (
@@ -10,7 +10,7 @@ const CourseUser = () => {
         <div>this is contens of course tab on user</div>
       </Segment>
     </Fragment>
-  );
-};
+  )
+}
 
-export default CourseUser;
+export default CourseUser
