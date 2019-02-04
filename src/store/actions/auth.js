@@ -25,6 +25,11 @@ export const setSignUpStatus = value => ({
   payload: value
 })
 
+export const signInAction = user => ({
+  type: 'SIGN_IN',
+  payload: user
+})
+
 export const logIn = data => dispatch => {
   Endpoint.post('/auth/login', data)
     .then(response => {

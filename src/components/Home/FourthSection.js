@@ -1,15 +1,7 @@
-import React, { Fragment } from "react";
-import {
-  Container,
-  Grid,
-  Image,
-  Divider,
-  Icon,
-  Card,
-  Reveal
-} from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Container, Grid, Image, Divider, Icon, Card, Reveal } from 'semantic-ui-react'
 
-import "./index.css";
+import './index.css'
 
 const FourthSection = () => {
   return (
@@ -23,8 +15,8 @@ const FourthSection = () => {
         <Container>
           <div className="fourth-title">
             <p align="center">
-              " No coach has ever won a game by what he knows, it’s what his
-              players know that counts. "
+              " No coach has ever won a game by what he knows, it’s what his players know that
+              counts. "
             </p>
           </div>
           <Divider horizontal>
@@ -51,12 +43,10 @@ const FourthSection = () => {
                       <Card.Meta>
                         <span className="date">Joined in 2019</span>
                       </Card.Meta>
-                      <Card.Description>
-                        Michael Jordan is pro player basket ball.
-                      </Card.Description>
+                      <Card.Description>Michael Jordan is pro player basket ball.</Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                      <a>
+                      <a href="#">
                         <Icon name="user" />
                         22 Friends
                       </a>
@@ -83,7 +73,7 @@ const FourthSection = () => {
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                      <a>
+                      <a href="#">
                         <Icon name="user" />
                         22 Friends
                       </a>
@@ -94,16 +84,10 @@ const FourthSection = () => {
                   <Card>
                     <Reveal animated="move">
                       <Reveal.Content visible>
-                        <Image
-                          src="/assets/home/ronaldinho1.jpg"
-                          size="medium"
-                        />
+                        <Image src="/assets/home/ronaldinho1.jpg" size="medium" />
                       </Reveal.Content>
                       <Reveal.Content hidden>
-                        <Image
-                          src="/assets/home/ronaldinho2.jpg"
-                          size="medium"
-                        />
+                        <Image src="/assets/home/ronaldinho2.jpg" size="medium" />
                       </Reveal.Content>
                     </Reveal>
                     <Card.Content>
@@ -116,7 +100,7 @@ const FourthSection = () => {
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                      <a>
+                      <a href="#">
                         <Icon name="user" />
                         22 Friends
                       </a>
@@ -129,7 +113,7 @@ const FourthSection = () => {
         </Container>
       </div>
     </Fragment>
-  );
-};
+  )
+}
 
-export default FourthSection;
+export default FourthSection
