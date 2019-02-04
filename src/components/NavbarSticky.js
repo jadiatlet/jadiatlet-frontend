@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Input, Container, Image, Menu, Visibility } from "semantic-ui-react";
+import { Container, Image, Menu, Visibility } from "semantic-ui-react";
 
 const fixedMenuStyle = {
   backgroundColor: "#fff",
@@ -12,8 +12,9 @@ const menuStyle = {
   border: "none",
   borderRadius: 0,
   boxShadow: "none",
-  marginBottom: "1em",
-  //   marginTop: "1em",
+  // marginBottom: "1em",
+  // marginTop: "1em",
+  paddingBottom: "10px",
   transition: "box-shadow 0.5s ease, padding 0.5s ease"
 };
 
@@ -60,9 +61,6 @@ class NavbarSticky extends Component {
             </Menu.Item>
 
             <Menu.Menu position="right">
-              <Menu.Item>
-                <Input icon="search" placeholder="Search..." />
-              </Menu.Item>
               <Menu.Item
                 name="signup"
                 active={activeItem === "signup"}

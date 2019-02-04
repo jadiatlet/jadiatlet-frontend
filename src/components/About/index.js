@@ -32,7 +32,6 @@ const About = () => {
             <Grid.Column>
               <Card
                 header="Easy"
-                BohemiaBohemiann
                 meta="EZ"
                 description="To be truly easy, become an athlete should be as easy as a tap or click."
               />
@@ -64,15 +63,64 @@ const About = () => {
       <Divider />
 
       <div className="about-distance" />
-      <Grid centered columns={2}>
-        <Grid.Column>
-          <List>
-            <List.Content>
-              <Image size="small" avatar src="assets/images/team/panji.JPG" />
-              <List.Header>Panji Gumelar</List.Header>
-            </List.Content>
+
+      <Grid centered columns={4}>
+        <Grid.Column />
+      </Grid>
+      <Grid columns="equal">
+        <Grid.Column />
+        <Grid.Column width={8}>
+          <List selection>
+            <List.Item>
+              <Image size="tiny" avatar src="assets/images/team/panji.JPG" />
+              <List.Content>
+                <List.Header as="h3">Panji Gumelar</List.Header>
+                <List.Description>
+                  <span>
+                    <strong>Team Leader</strong>
+                  </span>
+                  <p>Software Developer who are Passionate Web or Mobile Application</p>
+                </List.Description>
+              </List.Content>
+            </List.Item>
+            <div className="about-distance" />
+            <Divider />
+            <div className="about-distance" />
+            <List.Item>
+              <Image size="tiny" avatar src="assets/images/team/adi.JPG" />
+              <List.Content>
+                <List.Header as="h3">Masagus Hariadi Arief</List.Header>
+                <List.Description>
+                  <span>
+                    <strong>Team Member</strong>
+                  </span>
+                  <p>
+                    I'am a noobie One Piece fans.. I always read One Piece manga during working on
+                    <strong>jadiatlet</strong> project, Ha ha ha ha hayy
+                  </p>
+                  my journey is still a long way to complete the whole one piece chapter, maybe it
+                  will take 3 more months wikwikwik
+                </List.Description>
+              </List.Content>
+            </List.Item>
+            <div className="about-distance" />
+            <Divider />
+            <div className="about-distance" />
+            <List.Item>
+              <Image size="tiny" avatar src="assets/images/team/gatot.JPG" />
+              <List.Content>
+                <List.Header as="h3">Azerino Yogananta Gatot Subroto</List.Header>
+                <List.Description>
+                  <span>
+                    <strong>Team Member</strong>
+                  </span>
+                  <p>I'am Wibu, a japanese culture addict.. ikeh ikeh kimochi, sugoy..</p>
+                </List.Description>
+              </List.Content>
+            </List.Item>
           </List>
         </Grid.Column>
+        <Grid.Column />
       </Grid>
       <div className="about-distance" />
       <InnerFooter />

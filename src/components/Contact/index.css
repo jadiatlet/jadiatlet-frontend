@@ -1,0 +1,17 @@
+.contact-header {
+  /* font-family: 'Major Mono Display', monospace; */
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 15px;
+  font-size: 50px;
+  color: #ccc;
+  padding: 40px 0;
+}
+
+.contact-distance {
+  margin: 60px 0;
+}
+
+.contact-mission h5 {
+  color: cornflowerblue;
+  font-weight: bold;
+}

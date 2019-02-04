@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Form, Container, Image, Menu, Visibility } from "semantic-ui-react";
+import { Button, Container, Image, Menu, Visibility } from "semantic-ui-react";
 
 const fixedMenuStyle = {
   backgroundColor: "#fff",
@@ -15,18 +15,6 @@ const menuStyle = {
   marginBottom: "1em",
   transition: "box-shadow 0.5s ease, padding 0.5s ease"
 };
-const countryOptions = [
-  { text: "Jakarta Selatan" },
-  { text: "Jakarta Barat" },
-  { text: "Jakarta Timur" },
-  { text: "Depok" }
-];
-
-const sportOptions = [
-  { text: "Lempar Kuda" },
-  { text: "Lompat Pendek" },
-  { text: "Angkat Kunam" }
-];
 
 class NavbarLogedin extends Component {
   state = { activeItem: "", menuFixed: false, overlayFixed: false };
@@ -72,22 +60,12 @@ class NavbarLogedin extends Component {
 
             <Menu.Menu position="right">
               <Menu.Item>
-                <Form.Select
-                  placeholder="Select your country"
-                  options={countryOptions}
-                />
-              </Menu.Item>
-              <Menu.Item>
-                <Form.Select
-                  placeholder="Select your sport"
-                  options={sportOptions}
-                />
+                <Button negative>Sign Out</Button>
               </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
       </Visibility>
-      //--------------------
     );
   }
 }

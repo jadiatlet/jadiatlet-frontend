@@ -1,5 +1,5 @@
 .jumbo-image {
-  background-image: url('/assets/images/login-banner.jpg');
+  background-image: url("/assets/images/login-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 60px;
