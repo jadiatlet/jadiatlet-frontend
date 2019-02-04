@@ -13,8 +13,9 @@ import LogIn from './components/Login'
 import Contact from './components/Contact'
 import Terms from './components/Terms'
 import About from './components/About'
-import DashboardUser from './components/DashboardUser'
 import Help from './components/Help'
+import GuestSearch from './components/Guest/GuestSearch'
+import DashboardUser from './components/DashboardUser'
 
 class App extends Component {
   async componentDidMount() {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/terms" component={Terms} />
             <Route path="/help" component={Help} />
+            <Route path="/search" component={GuestSearch} />
           </div>
         </Router>
       </Fragment>
