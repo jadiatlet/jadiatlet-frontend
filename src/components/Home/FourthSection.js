@@ -32,7 +32,7 @@ const FourthSection = () => {
           </Divider>
           <Container>
             <h1 className="title-card" align="center">
-              Meet the professional Athlete
+              Meet with the professional Athlete
             </h1>
             <Grid columns={3}>
               <Grid.Row>
@@ -74,7 +74,7 @@ const FourthSection = () => {
                       </Reveal.Content>
                     </Reveal>
                     <Card.Content>
-                      <Card.Header>Matthew</Card.Header>
+                      <Card.Header>Conor McGregor</Card.Header>
                       <Card.Meta>
                         <span className="date">Joined in 2015</span>
                       </Card.Meta>
@@ -107,7 +107,7 @@ const FourthSection = () => {
                       </Reveal.Content>
                     </Reveal>
                     <Card.Content>
-                      <Card.Header>Matthew</Card.Header>
+                      <Card.Header>Ronaldinho</Card.Header>
                       <Card.Meta>
                         <span className="date">Joined in 2015</span>
                       </Card.Meta>

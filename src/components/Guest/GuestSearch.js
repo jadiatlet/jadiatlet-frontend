@@ -12,9 +12,8 @@ const GuestSearch = () => {
 
       <Container>
         <SearchBar />
-        <Segment>
-          <SearchResult />
-        </Segment>
+
+        <SearchResult />
       </Container>
     </Fragment>
   );
