@@ -6,10 +6,11 @@ import "./index.css";
 const SecondSection = () => (
   <Fragment>
     {/* --------------------- PENJELASAN JADI ATLET----------------------------- */}
+
     <div className="top-style">
       <div className="third-title1">
         <p align="center">
-          " A great coach can lead you to a place where you don't need him any
+          " A great coach can lead you to a place where you don't need him or her any
           more. "
         </p>
       </div>
@@ -29,21 +30,19 @@ const SecondSection = () => (
             <h3 className="title-slave">1. Select your sports</h3>
             <h3 className="title-slave">2. Choose and chat to your coach</h3>
             <h3 className="title-slave">3. Deal !</h3>
-            <Step.Group ordered> 
+            <Step.Group ordered>
               <Step active>
                 <Step.Content>
                   <Step.Title>Select</Step.Title>
                   <Step.Description>Choose your sprts</Step.Description>
                 </Step.Content>
               </Step>
-
               <Step active>
                 <Step.Content>
                   <Step.Title>Chat</Step.Title>
                   <Step.Description>Make appointment</Step.Description>
                 </Step.Content>
               </Step>
-
               <Step active>
                 <Step.Content>
                   <Step.Title>Deal !</Step.Title>
@@ -56,15 +55,18 @@ const SecondSection = () => (
     </div>
 
     {/* --------------------- PARALLAX CONTENT ----------------------------- */}
-    <div className="middle-background">
-      <div className="middle-style">
-        <h1 className="title-style">Play Like a Pro</h1>
-      </div>
-    </div>
 
-    <div className="background-style">
-      <div className="middle-style">
-        <h1 className="title-style2">Act Like a Champion</h1>
+    <div className="second-style" >
+      <div className="middle-background">
+        <div className="middle-style">
+          <h1 className="title-style">Play Like a Pro</h1>
+        </div>
+      </div>
+
+      <div className="background-style">
+        <div className="middle-style">
+          <h1 className="title-style2">Act Like a Champion</h1>
+        </div>
       </div>
     </div>
   </Fragment>
