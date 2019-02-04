@@ -27,6 +27,10 @@
 
 /* ------------------------- Second Section ------------------------------- */
 
+.second-style {
+  background: #fafafa;
+}
+
 .top-style {
   padding: 0 5% 5% 5%;
   background: #fafafa;
@@ -45,8 +49,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
-
 .title-style {
   padding: 150px 0 350px 350px;
   font-size: 35pt;
@@ -96,7 +100,11 @@
 
 /* ------------------------- Third Section ------------------------------- */
 
-.third-style {
+.third-style1 {
+  background: #fafafa;
+}
+
+.third-style2 {
   margin: 5%;
 }
 
@@ -108,8 +116,29 @@
   align-items: center;
 }
 
+.pharagraph-style {
+  font-family: 'Lato', sans-serif;
+  font-size: 15pt;
+}
+
+.pharagraph-style2 {
+  padding: 2%;
+  color: #ffffff;
+  background: #424242;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20pt;
+  border-radius: 10px;
+}
+
+.message-style {
+  margin-top: 5% !important;
+}
+
 /* ------------------------- Fourth Section ------------------------------- */
 
+.fourth-style {
+  background: #fafafa;
+}
 
 .background-style2 {
   margin-top: -200px;
@@ -145,4 +174,24 @@
 
 .picture-style {
   padding-left: 135px 
+}
+
+.title-card {
+  padding: 50px 0 50px 0;
+  font-size: 45pt;
+  font-family: 'Comfortaa', cursive;
+  /* border: #424242 1px solid; */
+}
+
+.card-style {
+  display: flex !important ;
+  justify-content: space-around !important ;
+}
+
+.card2 {
+  padding-left: 45px !important ;
+}
+
+.card3 {
+  padding-left: 45px !important ;
 }
