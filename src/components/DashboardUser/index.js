@@ -6,6 +6,7 @@ import NavbarLogedin from "../NavbarLogedin";
 import Avatar from "../Avatar";
 import CourseUser from "./Course/index";
 import ProfileUser from "./Profile";
+import InnerFooter from "../InnerFooter";
 
 const panes = [
   {
@@ -33,6 +34,7 @@ const DashboardUser = () => {
       <Container>
         <Avatar />
         <Tab panes={panes} />
+        <InnerFooter />
       </Container>
     </div>
   );
