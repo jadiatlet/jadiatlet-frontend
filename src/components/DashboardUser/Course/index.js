@@ -5,11 +5,14 @@ import '../index.css'
 import CourseContent from './CourseContent'
 import SeachBar from '../../SearchBar'
 
+const result = [1, 2, 3, 4];
+const results = result.map(() => <CourseContent />);
+
 const CourseUser = () => {
   return (
     <Fragment>
-      <CourseContent />
       <SeachBar />
+      {results}
     </Fragment>
   )
 }

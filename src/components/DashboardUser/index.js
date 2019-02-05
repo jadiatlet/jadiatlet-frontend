@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 
 import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
+import NavbarLogedin from "../NavbarLogedin";
+import Avatar from "../Avatar";
+import CourseUser from "./Course/index";
+import ProfileUser from "./Profile";
+import InnerFooter from "../InnerFooter";
 import NavbarLogedin from '../NavbarLogedin'
 import CourseUser from './Course/index'
 import ProfileUser from './Profile'
@@ -47,6 +52,7 @@ const DashboardUser = props => {
         </Segment>
         <Divider />
         <Tab panes={panes} />
+        <InnerFooter />
       </Container>
     </div>
   )
