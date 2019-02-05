@@ -39,7 +39,9 @@ const DashboardUser = props => {
               {props.user && props.user.last_name}
             </Header.Content>
             <Header.Subheader>
-              <Label color="teal">{props.user && props.user.user_type}</Label>
+              <Label color="teal" as="a" tag>
+                {props.user && props.user.user_type}
+              </Label>
             </Header.Subheader>
           </Header>
         </Segment>

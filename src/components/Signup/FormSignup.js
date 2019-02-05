@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { Button, Form, Grid, Message, Image, Radio } from 'semantic-ui-react'
-// import ReactFilestack from 'filestack-react'
 
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/auth'
@@ -30,7 +29,8 @@ class FormSignup extends Component {
     phone: '',
     user_type: '',
     city: '',
-    sport: ''
+    sport: '',
+    profile_picture: ''
   }
 
   handleChange = (e, data) => {
@@ -45,6 +45,12 @@ class FormSignup extends Component {
     e.preventDefault()
     console.log(this.state)
     this.props.signUp(this.state)
+  }
+
+  handleSuccess = result => {
+    const imageUrl = result.filesUploaded[0].url
+
+    console.log(imageUrl)
   }
 
   render() {
@@ -154,19 +160,6 @@ class FormSignup extends Component {
                   onChange={this.handleChange}
                 />
               </Form.Group>
-              {/* 
-              <ReactFilestack
-                apikey={apikey}
-                options={options}
-                onSuccess={onSuccess}
-                onError={onError}
-                render={({ onPick }) => (
-                  <div>
-                    <strong>Find an avatar</strong>
-                    <button onClick={onPick}>Pick</button>
-                  </div>
-                )}
-              /> */}
 
               <Button type="submit" color="teal" fluid size="large">
                 Sign Up
