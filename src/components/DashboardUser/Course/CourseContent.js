@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Divider, Table, Label, Header, Icon, Grid } from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Divider, Table, Label, Header, Icon, Grid } from 'semantic-ui-react'
 
 const CourseContent = () => {
   return (
@@ -29,11 +29,10 @@ const CourseContent = () => {
             <Table.Body>
               <Table.Row>
                 <Table.Cell colSpan="3">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                  eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                  eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                  montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+                  pretium quis, sem. Nulla consequat massa quis enim.
                 </Table.Cell>
               </Table.Row>
             </Table.Body>
@@ -66,7 +65,7 @@ const CourseContent = () => {
       </Grid>
       <Divider />
     </Fragment>
-  );
-};
+  )
+}
 
-export default CourseContent;
+export default CourseContent

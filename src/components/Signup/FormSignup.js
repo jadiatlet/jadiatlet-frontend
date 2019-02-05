@@ -56,17 +56,7 @@ class FormSignup extends Component {
   }
 
   render() {
-    const {
-      first_name,
-      last_name,
-      email,
-      password,
-      user_type,
-      phone,
-      city,
-      sport,
-      profile_picture
-    } = this.state
+    const { first_name, last_name, email, password, user_type, phone, city, sport } = this.state
     const { isAuthenticated, isSignUpSuccess } = this.props
 
     if (isSignUpSuccess) {
@@ -175,8 +165,8 @@ class FormSignup extends Component {
 
               <ReactFilestack
                 apikey={process.env.REACT_APP_FILESTACK_API_KEY}
-                buttonText="Click me"
-                className="upload-image-btn"
+                buttonText="Upload Profile Picture"
+                buttonClass="upload-image-btn"
                 options={{
                   accept: 'image/*',
                   storeTo: {

@@ -34,7 +34,7 @@ const DashboardUser = props => {
       <NavbarLogedin />
       <Container>
         <Segment vertical textAlign="center">
-          <Image size="small" src="/assets/images/team/gatot.JPG" avatar />
+          <Image size="small" src={props.user && props.user.profile_picture} avatar />
           <Header as="h2">
             <Header.Content>
               {`${props.user && props.user.first_name} `}
