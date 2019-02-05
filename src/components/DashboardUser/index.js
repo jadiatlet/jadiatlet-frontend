@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { Container, Tab, Grid, Segment, Image, Divider, Header } from 'semantic-ui-react'
+import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
 import NavbarLogedin from '../NavbarLogedin'
 import CourseUser from './Course/index'
@@ -31,25 +31,17 @@ const DashboardUser = props => {
     <div>
       <NavbarLogedin />
       <Container>
-        <Segment>
-          <Grid columns={2}>
-            <Grid.Column width={2}>
-              <Image size="tiny" src="/assets/images/team/gatot.JPG" avatar />
-            </Grid.Column>
-
-            <Grid.Column>
-              <Header as="h1">
-                <Header.Content>
-                  <div>
-                    {`${props.user && props.user.first_name} `}
-                    {props.user && props.user.last_name}
-                  </div>
-                  <Header.Subheader>{props.user && props.user.user_type}</Header.Subheader>
-                  <Header.Subheader>{props.user && props.user.city}</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Grid.Column>
-          </Grid>
+        <Segment vertical textAlign="center">
+          <Image size="small" src="/assets/images/team/gatot.JPG" avatar />
+          <Header as="h2">
+            <Header.Content>
+              {`${props.user && props.user.first_name} `}
+              {props.user && props.user.last_name}
+            </Header.Content>
+            <Header.Subheader>
+              <Label color="teal">{props.user && props.user.user_type}</Label>
+            </Header.Subheader>
+          </Header>
         </Segment>
         <Divider />
         <Tab panes={panes} />
