@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { Button, Form, Grid, Message, Image, Radio } from 'semantic-ui-react'
+import ReactFilestack from 'filestack-react'
 
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/auth'
@@ -49,12 +50,23 @@ class FormSignup extends Component {
 
   handleSuccess = result => {
     const imageUrl = result.filesUploaded[0].url
-
     console.log(imageUrl)
+
+    this.setState({ profile_picture: imageUrl })
   }
 
   render() {
-    const { first_name, last_name, email, password, user_type, phone, city, sport } = this.state
+    const {
+      first_name,
+      last_name,
+      email,
+      password,
+      user_type,
+      phone,
+      city,
+      sport,
+      profile_picture
+    } = this.state
     const { isAuthenticated, isSignUpSuccess } = this.props
 
     if (isSignUpSuccess) {
@@ -160,6 +172,19 @@ class FormSignup extends Component {
                   onChange={this.handleChange}
                 />
               </Form.Group>
+
+              <ReactFilestack
+                apikey={process.env.REACT_APP_FILESTACK_API_KEY}
+                buttonText="Click me"
+                className="upload-image-btn"
+                options={{
+                  accept: 'image/*',
+                  storeTo: {
+                    location: 's3'
+                  }
+                }}
+                onSuccess={this.handleSuccess}
+              />
 
               <Button type="submit" color="teal" fluid size="large">
                 Sign Up

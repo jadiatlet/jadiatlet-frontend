@@ -37,3 +37,9 @@
   width: 75px;
   height: 75px;
 }
+
+.upload-image-btn {
+  color: #eee;
+  background: #333;
+  padding: 20px;
+}
