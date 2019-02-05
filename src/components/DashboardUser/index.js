@@ -1,16 +1,20 @@
-import React from "react";
+import React from 'react'
+import { connect } from 'react-redux'
 
-import { Container, Tab } from "semantic-ui-react";
+import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
 import NavbarLogedin from "../NavbarLogedin";
 import Avatar from "../Avatar";
 import CourseUser from "./Course/index";
 import ProfileUser from "./Profile";
 import InnerFooter from "../InnerFooter";
+import NavbarLogedin from '../NavbarLogedin'
+import CourseUser from './Course/index'
+import ProfileUser from './Profile'
 
 const panes = [
   {
-    menuItem: "Course",
+    menuItem: 'Course',
     render: () => (
       <Tab.Pane>
         <CourseUser />
@@ -18,26 +22,42 @@ const panes = [
     )
   },
   {
-    menuItem: "Profile",
+    menuItem: 'Profile',
     render: () => (
       <Tab.Pane>
         <ProfileUser />
       </Tab.Pane>
     )
   }
-];
+]
 
-const DashboardUser = () => {
+const DashboardUser = props => {
   return (
     <div>
       <NavbarLogedin />
       <Container>
-        <Avatar />
+        <Segment vertical textAlign="center">
+          <Image size="small" src="/assets/images/team/gatot.JPG" avatar />
+          <Header as="h2">
+            <Header.Content>
+              {`${props.user && props.user.first_name} `}
+              {props.user && props.user.last_name}
+            </Header.Content>
+            <Header.Subheader>
+              <Label color="teal">{props.user && props.user.user_type}</Label>
+            </Header.Subheader>
+          </Header>
+        </Segment>
+        <Divider />
         <Tab panes={panes} />
         <InnerFooter />
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default DashboardUser;
+const mapStateToProps = state => ({
+  user: state.auth.user
+})
+
+export default connect(mapStateToProps)(DashboardUser)
