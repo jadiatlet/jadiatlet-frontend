@@ -1,18 +1,18 @@
-import React, { Fragment } from "react";
-import { Grid, Button, Form, Segment , Icon } from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Grid, Button, Form, Segment, Icon } from 'semantic-ui-react'
 
 const countryOptions = [
-  { text: "Jakarta Selatan" },
-  { text: "Jakarta Barat" },
-  { text: "Jakarta Timur" },
-  { text: "Depok" }
-];
+  { text: 'Jakarta Selatan', value: 'Jakarta Selatan' },
+  { text: 'Jakarta Barat', value: 'Jakarta Barat' },
+  { text: 'Jakarta Timur', value: 'Jakarta Timur' },
+  { text: 'Depok', value: 'Depok' }
+]
 
 const sportOptions = [
-  { text: "Lempar Kuda" },
-  { text: "Lompat Pendek" },
-  { text: "Angkat Kunam" }
-];
+  { text: 'Lempar Kuda', value: 'Lempar Kuda' },
+  { text: 'Lompat Pendek', value: 'Lompat Pendek' },
+  { text: 'Angkat Kunam', value: 'Angkat Kunam' }
+]
 
 const SearchBar = () => {
   return (
@@ -39,10 +39,10 @@ const SearchBar = () => {
 
             <Grid.Row>
               <Grid.Column>
-                <Button color='teal' floated='right' animated>
+                <Button color="teal" floated="right" animated>
                   <Button.Content visible>Search</Button.Content>
                   <Button.Content hidden>
-                    <Icon name='search' />
+                    <Icon name="search" />
                   </Button.Content>
                 </Button>
               </Grid.Column>
@@ -51,7 +51,7 @@ const SearchBar = () => {
         </Form>
       </Segment>
     </Fragment>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

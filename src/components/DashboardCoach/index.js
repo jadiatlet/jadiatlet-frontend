@@ -1,26 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import ReactFilestack from "filestack-react";
+import React from 'react'
+import { connect } from 'react-redux'
 
-import {
-  Container,
-  Tab,
-  Segment,
-  Image,
-  Divider,
-  Header,
-  Label
-} from "semantic-ui-react";
+import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
-import InnerFooter from "../InnerFooter";
-import NavbarLogedin from "../NavbarLogedin";
-import Trainee from "./Trainee";
-import CourseUser from "./Course/index";
-import ProfileUser from "./Profile";
+import InnerFooter from '../InnerFooter'
+import Navbar from '../Navbar'
+import Trainee from './Trainee'
+import CourseUser from './Course/index'
+import ProfileUser from './Profile'
 
 const panes = [
   {
-    menuItem: "Trainee",
+    menuItem: 'Trainee',
     render: () => (
       <Tab.Pane>
         <Trainee />
@@ -28,7 +19,7 @@ const panes = [
     )
   },
   {
-    menuItem: "Course",
+    menuItem: 'Course',
     render: () => (
       <Tab.Pane>
         <CourseUser />
@@ -36,20 +27,20 @@ const panes = [
     )
   },
   {
-    menuItem: "Profile",
+    menuItem: 'Profile',
     render: () => (
       <Tab.Pane>
         <ProfileUser />
       </Tab.Pane>
     )
   }
-];
+]
 
 const DashboardCoach = props => {
   return (
     <div>
-      <NavbarLogedin />
       <Container>
+        <Navbar />
         <Segment vertical textAlign="center">
           <Image size="small" src="/assets/images/team/gatot.JPG" avatar />
           <Header as="h2">
@@ -69,11 +60,11 @@ const DashboardCoach = props => {
         <InnerFooter />
       </Container>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = state => ({
   user: state.auth.user
-});
+})
 
-export default connect(mapStateToProps)(DashboardCoach);
+export default connect(mapStateToProps)(DashboardCoach)

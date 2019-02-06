@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react'
 
-import CourseContent from "./CourseContent";
-import SeachBar from "../../SearchBar";
+import CourseContent from './CourseContent'
+import SeachBar from '../../SearchBar'
 
-const result = [1, 2, 3, 4, 4];
-const results = result.map(() => <CourseContent />);
+const result = [1, 2, 3, 4, 4]
+const results = result.map((num, index) => <CourseContent key={index} />)
 
 const CourseUser = () => {
   return (
@@ -12,7 +12,7 @@ const CourseUser = () => {
       <SeachBar />
       {results}
     </Fragment>
-  );
-};
+  )
+}
 
-export default CourseUser;
+export default CourseUser

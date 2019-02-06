@@ -6,13 +6,17 @@ import NavbarSticky from '../NavbarSticky'
 import './index.css'
 
 const countryOptions = [
-  { text: 'Jakarta Selatan' },
-  { text: 'Jakarta Barat' },
-  { text: 'Jakarta Timur' },
-  { text: 'Depok' }
+  { text: 'Jakarta Selatan', value: 'Jakarta Selatan' },
+  { text: 'Jakarta Barat', value: 'Jakarta Barat' },
+  { text: 'Jakarta Timur', value: 'Jakarta Timur' },
+  { text: 'Depok', value: 'Depok' }
 ]
 
-const sportOptions = [{ text: 'Lempar Kuda' }, { text: 'Lompat Pendek' }, { text: 'Angkat Kunam' }]
+const sportOptions = [
+  { text: 'Lempar Kuda', value: 'Lempar Kuda' },
+  { text: 'Lompat Pendek', value: 'Lompat Pendek' },
+  { text: 'Angkat Kunam', value: 'Angkat Kunam' }
+]
 
 const MainSection = props => {
   // const { isAuthenticated, user, isSignUpSuccess } = props
