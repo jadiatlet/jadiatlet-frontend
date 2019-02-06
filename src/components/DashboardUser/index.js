@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import ReactFilestack from 'filestack-react'
-
 import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
 import InnerFooter from '../InnerFooter'
@@ -29,6 +28,10 @@ const panes = [
 ]
 
 const DashboardUser = props => {
+  if (!props.isAuthenticated) {
+    return <Redirect to="/" />
+  }
+
   return (
     <div>
       <NavbarLogedin />
@@ -56,6 +59,8 @@ const DashboardUser = props => {
 }
 
 const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  isSignUpSuccess: state.auth.isSignUpSuccess,
   user: state.auth.user
 })
 

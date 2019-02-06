@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react'
 
-import MainSection from "./MainSection";
-import SecondSection from "./SecondSection";
-import ThirdSection from "./ThirdSection";
-import FourthSection from "./FourthSection";
+import MainSection from './MainSection'
+import SecondSection from './SecondSection'
+import ThirdSection from './ThirdSection'
+import FourthSection from './FourthSection'
 import FifthSection from './FifthSection'
 import Footer from './Footer'
 
-import "./index.css";
+import './index.css'
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <FifthSection />
       <Footer />
     </Fragment>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
