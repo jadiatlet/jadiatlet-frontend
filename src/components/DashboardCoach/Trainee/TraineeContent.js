@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Grid, Table, Segment, Label, Icon, Button } from 'semantic-ui-react'
+import { Grid, Table, Segment, Label, Icon, Button, Divider } from 'semantic-ui-react'
 
 import AddCourseModal from './AddCourseModal'
 
@@ -17,6 +17,7 @@ class TraineeContent extends Component {
 
     return (
       <Fragment>
+        <Divider />
         <Grid centered columns={2}>
           <Grid.Column floated="left">
             <Segment>
