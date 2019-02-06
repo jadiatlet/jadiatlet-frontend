@@ -44,13 +44,11 @@ class FormSignup extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    console.log(this.state)
     this.props.signUp(this.state)
   }
 
   handleSuccess = result => {
     const imageUrl = result.filesUploaded[0].url
-    console.log(imageUrl)
 
     this.setState({ profile_picture: imageUrl })
   }

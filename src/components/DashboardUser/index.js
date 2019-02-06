@@ -28,7 +28,7 @@ const panes = [
 ]
 
 const DashboardUser = props => {
-  if (!props.isAuthenticated) {
+  if (!props.isAuthenticated || props.user.user_type !== 'Student') {
     return <Redirect to="/" />
   }
 
@@ -45,7 +45,7 @@ const DashboardUser = props => {
             </Header.Content>
             <Header.Subheader>
               <Label color="teal" as="a" tag>
-                {props.user && props.user.user_type}
+                Student
               </Label>
             </Header.Subheader>
           </Header>

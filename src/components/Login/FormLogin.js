@@ -19,16 +19,19 @@ class LoginForm extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    console.log(this.state)
     this.props.logIn(this.state)
   }
 
   render() {
     const { email, password } = this.state
-    const { isAuthenticated } = this.props
-    console.log(isAuthenticated)
+    const { isAuthenticated, user } = this.props
+
     if (isAuthenticated) {
-      return <Redirect to="/user" />
+      if (user.user_type === 'Coach') {
+        return <Redirect to="/coach" />
+      } else {
+        return <Redirect to="/user" />
+      }
     }
 
     return (
@@ -74,7 +77,8 @@ class LoginForm extends Component {
 
 const mapStateToProps = state => ({
   isSignUpSuccess: state.auth.isSignUpSuccess,
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user
 })
 
 export default connect(

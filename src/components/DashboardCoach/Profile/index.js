@@ -17,48 +17,46 @@ const ProfileUser = props => {
 
   return (
     <Fragment>
-      <Segment>
-        <Grid stackable columns={2}>
-          <Grid.Column>
-            <Segment>
-              <Table basic="very">
-                <Table.Body>
-                  {userDetails1.map((user, index) => {
-                    return (
-                      <Table.Row key={index}>
-                        <Table.Cell>
-                          <Icon name={user.icon} />
-                          {user.name}
-                        </Table.Cell>
-                        <Table.Cell>{user.data}</Table.Cell>
-                      </Table.Row>
-                    )
-                  })}
-                </Table.Body>
-              </Table>
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Table basic="very">
-                <Table.Body>
-                  {userDetails2.map((user, index) => {
-                    return (
-                      <Table.Row key={index}>
-                        <Table.Cell>
-                          <Icon name={user.icon} />
-                          {user.name}
-                        </Table.Cell>
-                        <Table.Cell>{user.data}</Table.Cell>
-                      </Table.Row>
-                    )
-                  })}
-                </Table.Body>
-              </Table>
-            </Segment>
-          </Grid.Column>
-        </Grid>
-      </Segment>
+      <Grid stackable columns={2}>
+        <Grid.Column>
+          <Segment>
+            <Table basic="very">
+              <Table.Body>
+                {userDetails1.map((user, index) => {
+                  return (
+                    <Table.Row key={index}>
+                      <Table.Cell>
+                        <Icon name={user.icon} />
+                        {user.name}
+                      </Table.Cell>
+                      <Table.Cell>{user.data}</Table.Cell>
+                    </Table.Row>
+                  )
+                })}
+              </Table.Body>
+            </Table>
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+            <Table basic="very">
+              <Table.Body>
+                {userDetails2.map((user, index) => {
+                  return (
+                    <Table.Row key={index}>
+                      <Table.Cell>
+                        <Icon name={user.icon} />
+                        {user.name}
+                      </Table.Cell>
+                      <Table.Cell>{user.data}</Table.Cell>
+                    </Table.Row>
+                  )
+                })}
+              </Table.Body>
+            </Table>
+          </Segment>
+        </Grid.Column>
+      </Grid>
     </Fragment>
   )
 }

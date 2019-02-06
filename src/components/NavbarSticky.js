@@ -76,7 +76,7 @@ class NavbarSticky extends Component {
                     // active={activeItem === 'login'}
                     onClick={this.handleItemClick}
                     as={Link}
-                    to="/user"
+                    to={user.user_type === 'Coach' ? '/coach' : '/user'}
                   >
                     {`Hi! ${user && user.first_name} ${user && user.last_name}`}
                   </Menu.Item>

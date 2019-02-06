@@ -5,18 +5,12 @@ export const signUp = data => dispatch => {
   Endpoint.post('/auth/signup', data)
     .then(response => {
       if (response.status === 200) {
-        dispatch({
-          type: 'SET_SIGN_UP_STATUS',
-          payload: true
-        })
+        dispatch(setSignUpStatus(true))
       }
     })
     .catch(err => {
       console.log(err)
-      dispatch({
-        type: 'SET_SIGN_UP_STATUS',
-        payload: false
-      })
+      dispatch(setSignUpStatus(false))
     })
 }
 
@@ -35,9 +29,7 @@ export const logIn = data => dispatch => {
     .then(response => {
       if (response.status === 200) {
         Cookies.set('token', response.data.token, { expires: 7 })
-        dispatch({
-          type: 'SIGN_IN'
-        })
+        dispatch(signInAction(response.data.user))
       }
     })
     .catch(err => {
