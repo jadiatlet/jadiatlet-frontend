@@ -1,19 +1,19 @@
-import React, { Component, Fragment } from "react";
-import { Grid, Table, Segment, Label, Icon, Button } from "semantic-ui-react";
+import React, { Component, Fragment } from 'react'
+import { Grid, Table, Segment, Label, Icon, Button } from 'semantic-ui-react'
 
-import AddCourseModal from "./AddCourseModal";
+import AddCourseModal from './AddCourseModal'
 
 class TraineeContent extends Component {
   constructor(props) {
-    super(props);
-    this.state = { open: false };
+    super(props)
+    this.state = { open: false }
   }
 
-  show = () => this.setState({ open: true });
-  close = () => this.setState({ open: false });
+  show = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
   render() {
-    const { open } = this.state;
+    const { open } = this.state
 
     return (
       <Fragment>
@@ -22,10 +22,9 @@ class TraineeContent extends Component {
             <Segment>
               <h2>Course Description</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
                 quis, sem. Nulla consequat massa quis enim.
               </p>
               <Table basic="very">
@@ -48,7 +47,7 @@ class TraineeContent extends Component {
 
                   <Table.Row>
                     <Table.Cell>
-                      <Icon name="time  " />
+                      <Icon name="time" />
                       Time
                     </Table.Cell>
                     <Table.Cell>Senin, 08:00 - 09:30</Table.Cell>
@@ -56,7 +55,7 @@ class TraineeContent extends Component {
 
                   <Table.Row>
                     <Table.Cell>
-                      <Icon name="map marker alternate  " />
+                      <Icon name="map marker alternate" />
                       Location
                     </Table.Cell>
                     <Table.Cell>Stadion Agan Gatot</Table.Cell>
@@ -108,8 +107,8 @@ class TraineeContent extends Component {
         </Grid>
         <AddCourseModal status={open} handleClose={this.close} />
       </Fragment>
-    );
+    )
   }
 }
 
-export default TraineeContent;
+export default TraineeContent
