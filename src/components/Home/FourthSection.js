@@ -1,15 +1,7 @@
-import React, { Fragment } from "react";
-import {
-  Container,
-  Grid,
-  Image,
-  Divider,
-  Icon,
-  Card,
-  Reveal
-} from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Container, Image, Divider, Icon } from 'semantic-ui-react'
 
-import "./index.css";
+import './index.css'
 
 const FourthSection = () => {
   return (
@@ -23,8 +15,8 @@ const FourthSection = () => {
         <Container>
           <div className="fourth-title">
             <p align="center">
-              " No coach has ever won a game by what he knows, it’s what his
-              players know that counts. "
+              " No coach has ever won a game by what he knows, it’s what his players know that
+              counts. "
             </p>
           </div>
           <Divider horizontal>
@@ -34,14 +26,14 @@ const FourthSection = () => {
             <Container>
               <div className="box-style">
                 {/* <h1 className="box-title">JADIATLET</h1> */}
-                <Image src="/assets/home/jadiatlet-section.png" size='massive' /> 
+                <Image src="/assets/home/jadiatlet-section.png" size="massive" />
               </div>
             </Container>
           </div>
         </Container>
       </div>
     </Fragment>
-  );
-};
+  )
+}
 
-export default FourthSection;
+export default FourthSection

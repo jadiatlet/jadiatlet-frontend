@@ -44,3 +44,11 @@ export const logIn = data => dispatch => {
       console.log(err)
     })
 }
+
+export const logOut = () => dispatch => {
+  Cookies.remove('token')
+
+  dispatch({
+    type: 'SIGN_OUT'
+  })
+}

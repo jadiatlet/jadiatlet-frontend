@@ -103,7 +103,6 @@ class TraineeContent extends Component {
               <Button positive onClick={this.show}>
                 Edit
               </Button>
-              ;
             </Button.Group>
           </Grid.Column>
         </Grid>

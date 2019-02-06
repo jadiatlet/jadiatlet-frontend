@@ -1,17 +1,17 @@
-import React, { Fragment } from "react";
-import { Container } from "semantic-ui-react";
+import React from 'react'
+import { Container } from 'semantic-ui-react'
 
-import NavbarSticky from "../NavbarSticky";
-import SearchBar from "../SearchBar";
-import SearchResult from "./SearchResult";
-import Footer from "../InnerFooter";
+import NavbarSticky from '../NavbarSticky'
+import SearchBar from '../SearchBar'
+import SearchResult from './SearchResult'
+import Footer from '../InnerFooter'
 
-import "./Guess.css";
+import './Guess.css'
 
-const result = [1, 2, 3, 4];
+const result = [1, 2, 3, 4]
 const results = result.map(val => {
-  return <SearchResult />;
-});
+  return <SearchResult />
+})
 
 const GuestSearch = () => {
   return (
@@ -24,7 +24,7 @@ const GuestSearch = () => {
       </Container>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default GuestSearch;
+export default GuestSearch

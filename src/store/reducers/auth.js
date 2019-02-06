@@ -10,6 +10,8 @@ export default (state = initialState, action) => {
       return { ...state, isSignUpSuccess: action.payload }
     case 'SIGN_IN':
       return { ...state, isAuthenticated: true, user: action.payload }
+    case 'SIGN_OUT':
+      return { ...state, isAuthenticated: false }
     default:
       return state
   }

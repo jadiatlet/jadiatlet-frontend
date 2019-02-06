@@ -59,6 +59,10 @@ class FormSignup extends Component {
     const { first_name, last_name, email, password, user_type, phone, city, sport } = this.state
     const { isAuthenticated, isSignUpSuccess } = this.props
 
+    if (isAuthenticated) {
+      return <Redirect to="/user" />
+    }
+
     if (isSignUpSuccess) {
       return <Redirect to="/login" />
     }

@@ -39,8 +39,3 @@ class AddCourseModal extends Component {
 }
 
 export default AddCourseModal;
-
-{
-  /* <Button onClick={this.show(true)}>Default</Button>
-<Button onClick={this.show('inverted')}>Inverted</Button> */
-}

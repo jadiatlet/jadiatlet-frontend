@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import ReactFilestack from 'filestack-react'
-
 import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
 
 import InnerFooter from '../InnerFooter'
-import NavbarLogedin from '../NavbarLogedin'
+import Navbar from '../Navbar'
 import CourseUser from './Course/index'
 import ProfileUser from './Profile'
 
@@ -29,10 +28,14 @@ const panes = [
 ]
 
 const DashboardUser = props => {
+  if (!props.isAuthenticated) {
+    return <Redirect to="/" />
+  }
+
   return (
     <div>
-      <NavbarLogedin />
       <Container>
+        <Navbar />
         <Segment vertical textAlign="center">
           <Image size="small" src={props.user && props.user.profile_picture} avatar />
           <Header as="h2">
@@ -56,6 +59,8 @@ const DashboardUser = props => {
 }
 
 const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  isSignUpSuccess: state.auth.isSignUpSuccess,
   user: state.auth.user
 })
 

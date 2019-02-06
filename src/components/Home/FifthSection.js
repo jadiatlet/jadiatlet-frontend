@@ -1,18 +1,17 @@
-import React, { Fragment } from "react";
+import React from 'react'
 import {
   Container,
   Grid,
   Divider,
-  Icon,
   Card,
   Reveal,
   Image,
   Form,
   TextArea,
   Button
-} from "semantic-ui-react";
+} from 'semantic-ui-react'
 
-import "./index.css";
+import './index.css'
 
 const FifthSection = () => {
   return (
@@ -39,8 +38,8 @@ const FifthSection = () => {
                     <span className="date">Joined in 2015</span>
                   </Card.Meta>
                   <Card.Description>
-                    Michael Jeffrey Jordan also known by his initials, MJ, is
-                    an American former professional basketball player.
+                    Michael Jeffrey Jordan also known by his initials, MJ, is an American former
+                    professional basketball player.
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -61,10 +60,9 @@ const FifthSection = () => {
                     <span className="date">Joined in 2015</span>
                   </Card.Meta>
                   <Card.Description>
-                    Conor Anthony McGregor is an Irish professional mixed
-                    martial artist and boxer. He is the former Ultimate
-                    Fighting Championship (UFC) featherweight and lightweight
-                    champion.
+                    Conor Anthony McGregor is an Irish professional mixed martial artist and boxer.
+                    He is the former Ultimate Fighting Championship (UFC) featherweight and
+                    lightweight champion.
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -85,10 +83,9 @@ const FifthSection = () => {
                     <span className="date">Joined in 2015</span>
                   </Card.Meta>
                   <Card.Description>
-                    Ronaldo de Assis Moreira commonly known as Ronaldinho
-                    Gaúcho is a Brazilian former professional footballer and
-                    ambassador for Barcelona. He played mostly as an attacking
-                    midfielder.
+                    Ronaldo de Assis Moreira commonly known as Ronaldinho Gaúcho is a Brazilian
+                    former professional footballer and ambassador for Barcelona. He played mostly as
+                    an attacking midfielder.
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -102,8 +99,8 @@ const FifthSection = () => {
                 <h2>CONTACT US</h2>
                 <h3>More Question ?</h3>
                 <p>
-                  Shoot us a message --> We'd love to hear from you and would
-                  be happy to answer any questions you have!
+                  Shoot us a message --> We'd love to hear from you and would be happy to answer any
+                  questions you have!
                 </p>
                 <p>
                   <strong>Email : </strong> admin@jadiatlet.com
@@ -128,19 +125,9 @@ const FifthSection = () => {
                       label="First Name"
                       placeholder="First Name"
                     />
-                    <Form.Input
-                      fluid
-                      name="last_name"
-                      label="Last Name"
-                      placeholder="Last Name"
-                    />
+                    <Form.Input fluid name="last_name" label="Last Name" placeholder="Last Name" />
                   </Form.Group>
-                  <Form.Input
-                    fluid
-                    name="email"
-                    label="Email"
-                    placeholder="Email"
-                  />
+                  <Form.Input fluid name="email" label="Email" placeholder="Email" />
                   <strong> Message </strong>
                   <TextArea placeholder="Tell us more" />
                   <Divider />
@@ -154,7 +141,7 @@ const FifthSection = () => {
         </Grid>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default FifthSection;
+export default FifthSection
