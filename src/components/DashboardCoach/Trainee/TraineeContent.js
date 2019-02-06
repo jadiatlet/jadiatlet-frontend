@@ -1,5 +1,13 @@
 import React, { Component, Fragment } from "react";
-import { Grid, Table, Segment, Label, Icon, Button } from "semantic-ui-react";
+import {
+  Grid,
+  Table,
+  Segment,
+  Label,
+  Icon,
+  Button,
+  Divider
+} from "semantic-ui-react";
 
 import AddCourseModal from "./AddCourseModal";
 
@@ -17,6 +25,7 @@ class TraineeContent extends Component {
 
     return (
       <Fragment>
+        <Divider />
         <Grid centered columns={2}>
           <Grid.Column floated="left">
             <Segment>
@@ -48,7 +57,7 @@ class TraineeContent extends Component {
 
                   <Table.Row>
                     <Table.Cell>
-                      <Icon name="time  " />
+                      <Icon name="time" />
                       Time
                     </Table.Cell>
                     <Table.Cell>Senin, 08:00 - 09:30</Table.Cell>
@@ -56,7 +65,7 @@ class TraineeContent extends Component {
 
                   <Table.Row>
                     <Table.Cell>
-                      <Icon name="map marker alternate  " />
+                      <Icon name="map marker alternate" />
                       Location
                     </Table.Cell>
                     <Table.Cell>Stadion Agan Gatot</Table.Cell>
