@@ -5,7 +5,7 @@ import SecondSection from "./SecondSection";
 import ThirdSection from "./ThirdSection";
 import FourthSection from "./FourthSection";
 import FifthSection from './FifthSection'
-// import NavbarSticky from "../NavbarSticky";
+import Footer from './Footer'
 
 import "./index.css";
 
@@ -17,6 +17,7 @@ const Home = () => {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      <Footer />
     </Fragment>
   );
 };

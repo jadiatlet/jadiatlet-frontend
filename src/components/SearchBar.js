@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Grid, Button, Form, Segment } from "semantic-ui-react";
+import { Grid, Button, Form, Segment , Icon } from "semantic-ui-react";
 
 const countryOptions = [
   { text: "Jakarta Selatan" },
@@ -39,7 +39,12 @@ const SearchBar = () => {
 
             <Grid.Row>
               <Grid.Column>
-                <Button floated="right">Search</Button>
+                <Button color='teal' floated='right' animated>
+                  <Button.Content visible>Search</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name='search' />
+                  </Button.Content>
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, Form, Header } from "semantic-ui-react";
+import { Grid, Button, Form, Header , Icon } from "semantic-ui-react";
 import NavbarSticky from "../NavbarSticky";
 import "./index.css";
 
@@ -47,7 +47,12 @@ const MainSection = () => (
 
               <Grid.Row>
                 <Grid.Column>
-                  <Button>Search</Button>
+                  <Button color='teal' floated='left' animated>
+                    <Button.Content visible>Search</Button.Content>
+                    <Button.Content hidden>
+                      <Icon name='search' />
+                    </Button.Content>
+                  </Button>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

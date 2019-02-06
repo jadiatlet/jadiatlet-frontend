@@ -21,6 +21,13 @@
   font-weight: bold !important;
 }
 
+.main-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /* ------------------------- Second Section ------------------------------- */
 
 .second-style {
@@ -80,6 +87,19 @@
   color: #838282;
 }
 
+.title-main2 {
+  font-size: 25pt;
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 15px;
+}
+
+.title-secondary2 {
+  margin-top: -15px;
+  margin-left: -5px;
+  font-family: 'Lato', sans-serif;
+  color: #838282;
+}
+
 .title-slave {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
@@ -100,7 +120,7 @@
 }
 
 .third-style2 {
-  margin: 5%;
+  padding: 5%;
 }
 
 .third-title {
@@ -190,4 +210,85 @@
 .card3 {
   padding-left: 45px !important ;
   padding-left: 135px;
+}
+
+/* ------------------------- Fifth Section ------------------------------- */
+
+.fifth-style {
+  padding: 1%;
+  background: #fafafa;
+}
+
+.box-style {
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.box-title {
+  /* font-family: 'Lato', sans-serif; */
+  letter-spacing: 10px;
+  font-size: 35pt;  
+  color: #353535;
+}
+
+.contact-style {
+  color: #353535;
+  margin: 10% 0 10% 0;
+  background: #eceaea;
+  border-radius: 20px;
+}
+
+.contact-text {
+  padding: 10%;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-contact {
+  padding-top: 12%;
+}
+
+/* ------------------------- Fifth Section ------------------------------- */
+
+.footer-style {
+  padding: 3% 10% 1% 10%;
+  /* margin-top: 10%; */
+  background: #353535;
+}
+
+.footer-text-title {
+  color: #fafafa !important ;
+  font-size: 12pt !important;
+}
+
+.footer-image {
+  margin-top: 5px;
+}
+
+.footer-text, .footer-subtitle {
+  color: #e6e6e6 !important ;
+}
+
+.footer-subtitle {
+  margin-top: -10px;
+}
+
+.footer-icon {
+  margin: -10% -3% 0 0 !important ;
+}
+
+.copyright-style {
+  padding: 1%;
+  background: #2b2929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
 }
