@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Grid, Table, Segment, Label, Icon, Button } from "semantic-ui-react";
+import React, { Fragment } from 'react'
+import { Grid, Table, Segment, Label, Icon, Button } from 'semantic-ui-react'
 
 const TraineeContent = () => {
   return (
@@ -9,11 +9,10 @@ const TraineeContent = () => {
           <Segment>
             <h2>Course Description</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+              nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+              quis, sem. Nulla consequat massa quis enim.
             </p>
             <Table basic="very">
               <Table.Body>
@@ -35,7 +34,7 @@ const TraineeContent = () => {
 
                 <Table.Row>
                   <Table.Cell>
-                    <Icon name="time  " />
+                    <Icon name="time" />
                     Time
                   </Table.Cell>
                   <Table.Cell>Senin, 08:00 - 09:30</Table.Cell>
@@ -43,7 +42,7 @@ const TraineeContent = () => {
 
                 <Table.Row>
                   <Table.Cell>
-                    <Icon name="map marker alternate  " />
+                    <Icon name="map marker alternate" />
                     Location
                   </Table.Cell>
                   <Table.Cell>Stadion Agan Gatot</Table.Cell>
@@ -92,7 +91,7 @@ const TraineeContent = () => {
         </Grid.Column>
       </Grid>
     </Fragment>
-  );
-};
+  )
+}
 
-export default TraineeContent;
+export default TraineeContent
