@@ -20,7 +20,6 @@ class CoachExperiences extends Component {
 
   render() {
     const { open } = this.state
-    console.log(this.props.coach)
     return (
       <Segment>
         <ModalExperience status={open} handleClose={this.close} />

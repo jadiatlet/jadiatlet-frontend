@@ -6,6 +6,8 @@ export default (state = {}, action) => {
       return { ...state, achievement: action.payload }
     case 'GET_COACH_EXPERIENCE':
       return { ...state, experience: action.payload }
+    case 'GET_COACH_ACHIEVEMENT':
+      return { ...state, achievement: action.payload }
     default:
       return state
   }

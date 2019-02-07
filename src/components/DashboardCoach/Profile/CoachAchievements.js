@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Divider, Button, Icon, Container, Table, Header, Segment } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
 import ModalAchievement from './Modal/ModalAchievement'
-
+import { getCoachAchievement } from '../../../store/actions/coach'
 class CoachAchievements extends Component {
   constructor(props) {
     super(props)
@@ -11,6 +12,10 @@ class CoachAchievements extends Component {
 
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
+
+  componentDidMount() {
+    this.props.getCoachAchievement({ ...this.props.user, coachId: this.props.user.id })
+  }
 
   render() {
     const { open } = this.state
@@ -38,11 +43,16 @@ class CoachAchievements extends Component {
           </Table.Header>
 
           <Table.Body>
-            <Table.Row>
-              <Table.Cell>1</Table.Cell>
-              <Table.Cell>Jajang</Table.Cell>
-              <Table.Cell>2017</Table.Cell>
-            </Table.Row>
+            {this.props.coach.achievement &&
+              this.props.coach.achievement.map((achievement, index) => {
+                return (
+                  <Table.Row key={index}>
+                    <Table.Cell>{index + 1}</Table.Cell>
+                    <Table.Cell>{achievement.title}</Table.Cell>
+                    <Table.Cell>{achievement.year}</Table.Cell>
+                  </Table.Row>
+                )
+              })}
           </Table.Body>
         </Table>
       </Segment>
@@ -50,4 +60,12 @@ class CoachAchievements extends Component {
   }
 }
 
-export default CoachAchievements
+const mapStateToProps = state => ({
+  coach: state.coach,
+  user: state.auth.user
+})
+
+export default connect(
+  mapStateToProps,
+  { getCoachAchievement }
+)(CoachAchievements)
