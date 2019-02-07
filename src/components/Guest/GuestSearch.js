@@ -1,30 +1,38 @@
-import React from 'react'
-import { Container } from 'semantic-ui-react'
+import React, { Component } from "react";
+import { Container } from "semantic-ui-react";
+import { connect } from "react-redux";
 
-import NavbarSticky from '../NavbarSticky'
-import SearchBar from '../SearchBar'
-import SearchResult from './SearchResult'
-import Footer from '../InnerFooter'
+import NavbarSticky from "../NavbarSticky";
+import SearchBar from "../SearchBar";
+import SearchResult from "./SearchResult";
+import Footer from "../InnerFooter";
 
-import './Guess.css'
+import "./Guess.css";
 
-const result = [1, 2, 3, 4]
-const results = result.map(val => {
-  return <SearchResult />
-})
+class GuestSearch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    const { results } = this.props;
 
-const GuestSearch = () => {
-  return (
-    <div className="guest-style">
-      <NavbarSticky />
+    return (
+      <div className="guest-style">
+        <NavbarSticky />
 
-      <Container>
-        <SearchBar />
-        <span>{results}</span>
-      </Container>
-      <Footer />
-    </div>
-  )
+        <Container>
+          <SearchBar />
+          {results && results.users.map(user => <SearchResult user={user} />)}
+        </Container>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default GuestSearch
+const mapStateToProps = store => ({
+  results: store.search.results
+});
+
+export default connect(mapStateToProps)(GuestSearch);

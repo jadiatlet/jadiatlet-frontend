@@ -1,78 +1,116 @@
-import React from 'react'
-import { Grid, Button, Form, Header, Icon } from 'semantic-ui-react'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { Grid, Button, Form, Header, Icon } from "semantic-ui-react";
+import { connect } from "react-redux";
 
-import NavbarSticky from '../NavbarSticky'
-import './index.css'
+import { searchValue } from "../../store/actions/search";
+
+import NavbarSticky from "../NavbarSticky";
+import "./index.css";
 
 const countryOptions = [
-  { text: 'Jakarta Selatan', value: 'Jakarta Selatan' },
-  { text: 'Jakarta Barat', value: 'Jakarta Barat' },
-  { text: 'Jakarta Timur', value: 'Jakarta Timur' },
-  { text: 'Depok', value: 'Depok' }
-]
+  { text: "Jakarta Selatan", value: "Jakarta Selatan" },
+  { text: "Jakarta Barat", value: "Jakarta Barat" },
+  { text: "Jakarta Timur", value: "Jakarta Timur" },
+  { text: "Depok", value: "Depok" }
+];
 
 const sportOptions = [
-  { text: 'Lempar Kuda', value: 'Lempar Kuda' },
-  { text: 'Lompat Pendek', value: 'Lompat Pendek' },
-  { text: 'Angkat Kunam', value: 'Angkat Kunam' }
-]
+  { text: "Lempar Kuda", value: "Lempar Kuda" },
+  { text: "Lompat Pendek", value: "Lompat Pendek" },
+  { text: "Angkat Kunam", value: "Angkat Kunam" }
+];
 
-const MainSection = props => {
-  // const { isAuthenticated, user, isSignUpSuccess } = props
+class MainSection extends Component {
+  state = {
+    city: "",
+    sport: ""
+  };
 
-  return (
-    <div className="homeBackground">
-      <NavbarSticky />
+  handleChange = (e, data) => {
+    if (data) {
+      this.setState({ [data.name]: data.value });
+    } else {
+      this.setState({ [e.target.name]: e.target.value });
+    }
+  };
 
-      <Grid centered columns={2}>
-        <Grid.Column className="form-style" floated="left">
-          <div className="container-FormOnHome">
-            <Header className="section-title" as="h1">
-              Ready for Jadi Atlet ?
-            </Header>
+  handleSubmit = async e => {
+    e.preventDefault();
+    this.props.searchValue(this.state);
+    console.log(this.state);
+  };
 
-            <Form success>
-              <Grid>
-                <Grid.Row>
-                  <Grid.Column width={10}>
-                    <Form.Select
-                      label="Select your location"
-                      placeholder="Select your country"
-                      options={countryOptions}
-                    />
+  render() {
+    const { city, sport } = this.state;
 
-                    <Form.Select
-                      label="Select your sport"
-                      placeholder="Select your sport"
-                      options={sportOptions}
-                    />
-                  </Grid.Column>
-                </Grid.Row>
+    return (
+      <div className="homeBackground">
+        <NavbarSticky />
 
-                <Grid.Row>
-                  <Grid.Column>
-                    <Button color="teal" floated="left" animated>
-                      <Button.Content visible>Search</Button.Content>
-                      <Button.Content hidden>
-                        <Icon name="search" />
-                      </Button.Content>
-                    </Button>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Form>
-          </div>
-        </Grid.Column>
-      </Grid>
-    </div>
-  )
+        <Grid centered columns={2}>
+          <Grid.Column className="form-style" floated="left">
+            <div className="container-FormOnHome">
+              <Header className="section-title" as="h1">
+                Ready for Jadi Atlet ?
+              </Header>
+
+              <Form onSubmit={this.handleSubmit} success>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column width={10}>
+                      <Form.Select
+                        name="city"
+                        label="Select your location"
+                        placeholder="Select your country"
+                        value={city}
+                        onChange={this.handleChange}
+                        options={countryOptions}
+                      />
+
+                      <Form.Select
+                        name="sport"
+                        label="Select your sport"
+                        placeholder="Select your sport"
+                        value={sport}
+                        onChange={this.handleChange}
+                        options={sportOptions}
+                      />
+                    </Grid.Column>
+                  </Grid.Row>
+
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Button
+                        type="submit"
+                        color="teal"
+                        floated="left"
+                        animated
+                      >
+                        <Button.Content visible>Search</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name="search" />
+                        </Button.Content>
+                      </Button>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Form>
+            </div>
+          </Grid.Column>
+        </Grid>
+      </div>
+    );
+  }
 }
 
 const maspStateToProps = state => ({
+  search: state.search.searchValue,
   isAuthenticated: state.auth.isAuthenticated,
   user: state.auth.user,
   isSignUpSuccess: state.auth.isSignUpSuccess
-})
+});
 
-export default connect(maspStateToProps)(MainSection)
+export default connect(
+  maspStateToProps,
+  { searchValue }
+)(MainSection);

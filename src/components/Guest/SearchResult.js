@@ -3,32 +3,40 @@ import { Segment, Grid, Image, Icon, Button } from "semantic-ui-react";
 
 import "./Guess.css";
 
-const SearchResult = () => {
+const SearchResult = ({ user }) => {
   return (
     <Segment>
       <Grid columns={2}>
         <Grid.Row stretched>
           <Grid.Column textAlign="center" width={8}>
             <Segment>
-              <Image
-                src="https://react.semantic-ui.com/images/avatar/large/nan.jpg"
-                size="small"
-                avatar
-              />
-              <h1 className="guest-title-style">Fullname of Trainer</h1>
-              <h2 className="guest-subtitle-style">Sports</h2>
+              <Image src={user.profile_picture} size="small" avatar />
+              <h1 className="guest-title-style">{user.first_name}</h1>
+              <h2 className="guest-subtitle-style">{user.sport}</h2>
             </Segment>
           </Grid.Column>
           <Grid.Column width={8} floated="right">
             <Segment>
               <h1 className="guest-title-style">Achievement</h1>
-              <h4 className="guest-subtitle-style">1</h4>
-              <h4 className="guest-subtitle-style">2</h4>
+              <ul>
+                {user.coach_achievements.slice(1).map(achievement => (
+                  <li>
+                    <h4 className="guest-subtitle-style">
+                      {achievement.title}
+                    </h4>
+                  </li>
+                ))}
+              </ul>
             </Segment>
             <Segment>
               <h1 className="guest-title-style">Experience</h1>
-              <h4 className="guest-subtitle-style">1</h4>
-              <h4 className="guest-subtitle-style">2</h4>
+              <ul>
+                {user.coach_experiences.slice(1).map(experience => (
+                  <li>
+                    <h4 className="guest-subtitle-style">{experience.title}</h4>
+                  </li>
+                ))}
+              </ul>
             </Segment>
             <div>
               <Button floated="right" color="teal" animated="fade">
