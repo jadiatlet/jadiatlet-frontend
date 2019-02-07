@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Divider, Button, Icon, Container, Table, Header, Segment } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
 import ModalExperience from './Modal/ModalExperience'
+import { getCoachExperience } from '../../../store/actions/coach'
 
 class CoachExperiences extends Component {
   constructor(props) {
@@ -12,9 +14,13 @@ class CoachExperiences extends Component {
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
 
+  componentDidMount() {
+    this.props.getCoachExperience({ ...this.props.user, coachId: this.props.user.id })
+  }
+
   render() {
     const { open } = this.state
-
+    console.log(this.props.coach)
     return (
       <Segment>
         <ModalExperience status={open} handleClose={this.close} />
@@ -39,12 +45,17 @@ class CoachExperiences extends Component {
           </Table.Header>
 
           <Table.Body>
-            <Table.Row>
-              <Table.Cell>1</Table.Cell>
-              <Table.Cell>Coach Basket Scholl</Table.Cell>
-              <Table.Cell>Aril 2017</Table.Cell>
-              <Table.Cell>February 2018</Table.Cell>
-            </Table.Row>
+            {this.props.coach.experience &&
+              this.props.coach.experience.map((experience, index) => {
+                return (
+                  <Table.Row key={index}>
+                    <Table.Cell>{index + 1}</Table.Cell>
+                    <Table.Cell>{experience.title}</Table.Cell>
+                    <Table.Cell>{experience.start_date}</Table.Cell>
+                    <Table.Cell>{experience.end_date}</Table.Cell>
+                  </Table.Row>
+                )
+              })}
           </Table.Body>
         </Table>
       </Segment>
@@ -52,4 +63,12 @@ class CoachExperiences extends Component {
   }
 }
 
-export default CoachExperiences
+const mapStateToProps = state => ({
+  coach: state.coach,
+  user: state.auth.user
+})
+
+export default connect(
+  mapStateToProps,
+  { getCoachExperience }
+)(CoachExperiences)
