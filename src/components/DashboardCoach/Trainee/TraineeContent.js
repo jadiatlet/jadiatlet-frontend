@@ -1,20 +1,21 @@
-import React, { Component, Fragment } from 'react'
-import { Grid, Table, Segment, Label, Icon, Button, Divider } from 'semantic-ui-react'
-
-import AddCourseModal from './AddCourseModal'
+import React, { Component, Fragment } from "react";
+import {
+  Grid,
+  Table,
+  Segment,
+  Label,
+  Icon,
+  Button,
+  Divider
+} from "semantic-ui-react";
 
 class TraineeContent extends Component {
   constructor(props) {
-    super(props)
-    this.state = { open: false }
+    super(props);
+    this.state = {};
   }
 
-  show = () => this.setState({ open: true })
-  close = () => this.setState({ open: false })
-
   render() {
-    const { open } = this.state
-
     return (
       <Fragment>
         <Divider />
@@ -23,9 +24,10 @@ class TraineeContent extends Component {
             <Segment>
               <h2>Course Description</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
                 quis, sem. Nulla consequat massa quis enim.
               </p>
               <Table basic="very">
@@ -97,19 +99,12 @@ class TraineeContent extends Component {
                 </Table.Row>
               </Table.Body>
             </Table>
-            <Button.Group floated="right">
-              <Button negative>Delete</Button>
-              <Button.Or />
-              <Button positive onClick={this.show}>
-                Edit
-              </Button>
-            </Button.Group>
+            <Button negative>Delete</Button>
           </Grid.Column>
         </Grid>
-        <AddCourseModal status={open} handleClose={this.close} />
       </Fragment>
-    )
+    );
   }
 }
 
-export default TraineeContent
+export default TraineeContent;
