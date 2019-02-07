@@ -1,116 +1,141 @@
-import React, { Component } from "react";
-import { Grid, Button, Form, Header, Icon } from "semantic-ui-react";
-import { connect } from "react-redux";
-
-import { searchValue } from "../../store/actions/search";
+// import React, { Component } from "react";
+import React from "react";
+import { Grid, Button, Header, Icon } from "semantic-ui-react";
+// import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import NavbarSticky from "../NavbarSticky";
 import "./index.css";
 
-const countryOptions = [
-  { text: "Jakarta Selatan", value: "Jakarta Selatan" },
-  { text: "Jakarta Barat", value: "Jakarta Barat" },
-  { text: "Jakarta Timur", value: "Jakarta Timur" },
-  { text: "Depok", value: "Depok" }
-];
+const MainSection = () => {
+  return (
+    <div className="homeBackground">
+      <NavbarSticky />
+      <Grid centered columns={2}>
+        <Grid.Column className="form-style" floated="left">
+          <div className="container-FormOnHome">
+            <Header className="section-title" as="h1">
+              Ready for Jadi Atlet ?
+            </Header>
 
-const sportOptions = [
-  { text: "Lempar Kuda", value: "Lempar Kuda" },
-  { text: "Lompat Pendek", value: "Lompat Pendek" },
-  { text: "Angkat Kunam", value: "Angkat Kunam" }
-];
+            <Grid>
+              <Grid.Row>
+                <Grid.Column>
+                  <Button
+                    color="teal"
+                    floated="left"
+                    animated
+                    as={Link}
+                    to="/search"
+                  >
+                    <Button.Content visible>Search New Course</Button.Content>
+                    <Button.Content hidden>
+                      <Icon name="search" />
+                    </Button.Content>
+                  </Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
+        </Grid.Column>
+      </Grid>
+    </div>
+  );
+};
 
-class MainSection extends Component {
-  state = {
-    city: "",
-    sport: ""
-  };
+export default MainSection;
 
-  handleChange = (e, data) => {
-    if (data) {
-      this.setState({ [data.name]: data.value });
-    } else {
-      this.setState({ [e.target.name]: e.target.value });
-    }
-  };
+// class MainSection extends Component {
+//   state = {
+//     city: "",
+//     sport: ""
+//   };
 
-  handleSubmit = async e => {
-    e.preventDefault();
-    this.props.searchValue(this.state);
-    console.log(this.state);
-  };
+//   handleChange = (e, data) => {
+//     if (data) {
+//       this.setState({ [data.name]: data.value });
+//     } else {
+//       this.setState({ [e.target.name]: e.target.value });
+//     }
+//   };
 
-  render() {
-    const { city, sport } = this.state;
+//   handleSubmit = async e => {
+//     e.preventDefault();
+//     this.props.searchValue(this.state);
+//     console.log(this.state);
+//   };
 
-    return (
-      <div className="homeBackground">
-        <NavbarSticky />
+//   render() {
+//     const { city, sport } = this.state;
 
-        <Grid centered columns={2}>
-          <Grid.Column className="form-style" floated="left">
-            <div className="container-FormOnHome">
-              <Header className="section-title" as="h1">
-                Ready for Jadi Atlet ?
-              </Header>
+//     return (
+//       <div className="homeBackground">
+//         <NavbarSticky />
 
-              <Form onSubmit={this.handleSubmit} success>
-                <Grid>
-                  <Grid.Row>
-                    <Grid.Column width={10}>
-                      <Form.Select
-                        name="city"
-                        label="Select your location"
-                        placeholder="Select your country"
-                        value={city}
-                        onChange={this.handleChange}
-                        options={countryOptions}
-                      />
+//         <Grid centered columns={2}>
+//           <Grid.Column className="form-style" floated="left">
+//             <div className="container-FormOnHome">
+//               <Header className="section-title" as="h1">
+//                 Ready for Jadi Atlet ?
+//               </Header>
 
-                      <Form.Select
-                        name="sport"
-                        label="Select your sport"
-                        placeholder="Select your sport"
-                        value={sport}
-                        onChange={this.handleChange}
-                        options={sportOptions}
-                      />
-                    </Grid.Column>
-                  </Grid.Row>
+//               <Form onSubmit={this.handleSubmit} success>
+//                 <Grid>
+//                   <Grid.Row>
+//                     <Grid.Column width={10}>
+//                       <Form.Select
+//                         name="city"
+//                         label="Select your location"
+//                         placeholder="Select your country"
+//                         value={city}
+//                         onChange={this.handleChange}
+//                         options={countryOptions}
+//                       />
 
-                  <Grid.Row>
-                    <Grid.Column>
-                      <Button
-                        type="submit"
-                        color="teal"
-                        floated="left"
-                        animated
-                      >
-                        <Button.Content visible>Search</Button.Content>
-                        <Button.Content hidden>
-                          <Icon name="search" />
-                        </Button.Content>
-                      </Button>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-              </Form>
-            </div>
-          </Grid.Column>
-        </Grid>
-      </div>
-    );
-  }
-}
+//                       <Form.Select
+//                         name="sport"
+//                         label="Select your sport"
+//                         placeholder="Select your sport"
+//                         value={sport}
+//                         onChange={this.handleChange}
+//                         options={sportOptions}
+//                       />
+//                     </Grid.Column>
+//                   </Grid.Row>
 
-const maspStateToProps = state => ({
-  search: state.search.searchValue,
-  isAuthenticated: state.auth.isAuthenticated,
-  user: state.auth.user,
-  isSignUpSuccess: state.auth.isSignUpSuccess
-});
+//                   <Grid.Row>
+//                     <Grid.Column>
+//                       <Button
+//                         type="submit"
+//                         color="teal"
+//                         floated="left"
+//                         animated
+//                       >
+//                         <Button.Content visible>Search</Button.Content>
+//                         <Button.Content hidden>
+//                           <Icon name="search" />
+//                         </Button.Content>
+//                       </Button>
+//                     </Grid.Column>
+//                   </Grid.Row>
+//                 </Grid>
+//               </Form>
+//             </div>
+//           </Grid.Column>
+//         </Grid>
+//       </div>
+//     );
+//   }
+// }
 
-export default connect(
-  maspStateToProps,
-  { searchValue }
-)(MainSection);
+// const maspStateToProps = state => ({
+//   search: state.search.searchValue,
+//   isAuthenticated: state.auth.isAuthenticated,
+//   user: state.auth.user,
+//   isSignUpSuccess: state.auth.isSignUpSuccess
+// });
+
+// export default connect(
+//   maspStateToProps,
+//   { searchValue }
+// )(MainSection);
