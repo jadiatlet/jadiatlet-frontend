@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Menu, Button, Divider } from "semantic-ui-react";
+import { Button, Divider } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import CourseContent from "./CourseContent";
@@ -11,7 +11,6 @@ const results = result.map(() => <CourseContent />);
 const CourseUser = () => {
   return (
     <Fragment>
-      <Menu.Item />
       <Button
         name="search"
         as={Link}
