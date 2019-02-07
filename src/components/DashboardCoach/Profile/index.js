@@ -10,7 +10,7 @@ const ProfileUser = props => {
   const coachDetails1 = [
     { name: 'E-Mail', data: props.user.email, icon: 'mail' },
     { name: 'City', data: props.user.city, icon: 'map marker alternate' },
-    { name: 'Address', data: props.user.overview, icon: 'road' }
+    { name: 'Address', data: props.user.address, icon: 'road' }
   ]
 
   const coachDetails2 = [

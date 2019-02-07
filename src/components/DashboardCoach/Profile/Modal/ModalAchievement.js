@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { Modal, Form, Button, Container, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-import { addCoachAchievement } from '../../../../store/actions/coach'
+import { addCoachAchievement, getCoachAchievement } from '../../../../store/actions/coach'
 
 class ModalAchievement extends Component {
   state = {
     title: '',
-    year: ''
+    years: ''
   }
 
   handleChange = (e, data) => {
@@ -18,17 +18,17 @@ class ModalAchievement extends Component {
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault()
-    this.props.addCoachAchievement({ ...this.state, coachId: this.props.user.id })
+    await this.props.addCoachAchievement({ ...this.state, coachId: this.props.user.id })
     this.setState({
       title: '',
-      year: ''
+      years: ''
     })
   }
 
   render() {
-    const { title, year } = this.state
+    const { title, years } = this.state
 
     return (
       <Modal centered={false} open={this.props.status} onClose={this.props.handleClose}>
@@ -49,8 +49,8 @@ class ModalAchievement extends Component {
                   fluid
                   label="Year"
                   placeholder="Year that you get the Achievement"
-                  name="year"
-                  value={year}
+                  name="years"
+                  value={years}
                   onChange={this.handleChange}
                 />
               </Form.Group>
@@ -74,5 +74,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addCoachAchievement }
+  { addCoachAchievement, getCoachAchievement }
 )(ModalAchievement)

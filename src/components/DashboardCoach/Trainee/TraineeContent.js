@@ -20,7 +20,8 @@ class TraineeContent extends Component {
       <Fragment>
         <Divider />
         <Grid centered columns={2}>
-          {this.props.course.course &&
+          {this.props.course &&
+            this.props.course.course &&
             this.props.course.course.map((course, index) => {
               return (
                 <Grid.Column floated="left" key={index}>
