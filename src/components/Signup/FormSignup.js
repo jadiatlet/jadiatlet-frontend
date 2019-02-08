@@ -1,68 +1,82 @@
-import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import { Button, Form, Grid, Message, Image, Radio } from 'semantic-ui-react'
-import ReactFilestack from 'filestack-react'
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { Button, Form, Grid, Message, Image, Radio } from "semantic-ui-react";
+import ReactFilestack from "filestack-react";
 
-import { connect } from 'react-redux'
-import { signUp } from '../../store/actions/auth'
+import { connect } from "react-redux";
+import { signUp } from "../../store/actions/auth";
 
-import './signup.css'
+import "./signup.css";
 
 const countryOptions = [
-  { text: 'Jakarta Selatan', value: 'Jakarta Selatan' },
-  { text: 'Jakarta Barat', value: 'Jakarta Barat' },
-  { text: 'Jakarta Timur', value: 'Jakarta Timur' },
-  { text: 'Depok', value: 'Depok' }
-]
+  { text: "Jakarta Raya", value: "Jakarta Raya" },
+  { text: "Bogor", value: "Bogor" },
+  { text: "Depok", value: "Depok" },
+  { text: "Tanggerang", value: "Tanggerang" },
+  { text: "Bekasi", value: "Bekasi" }
+];
 
 const sportOptions = [
-  { text: 'Lempar Kuda', value: 'Lempar Kuda' },
-  { text: 'Lompat Pendek', value: 'Lompat Pendek' },
-  { text: 'Angkat Kunam', value: 'Angkat Kunam' }
-]
+  { text: "Athletics", value: "Athletics" },
+  { text: "Socer", value: "Socer" },
+  { text: "Basket Ball", value: "Basket Ball" },
+  { text: "Skateboard", value: "Skateboard" },
+  { text: "Badmiton", value: "Badmiton" },
+  { text: "Tennis", value: "Tennis" },
+  { text: "Volleyball", value: "Volleyball" }
+];
 
 class FormSignup extends Component {
   state = {
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    phone: '',
-    user_type: '',
-    city: '',
-    sport: '',
-    profile_picture: ''
-  }
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    phone: "",
+    user_type: "",
+    city: "",
+    sport: "",
+    profile_picture: ""
+  };
 
   handleChange = (e, data) => {
     if (data) {
-      this.setState({ [data.name]: data.value })
+      this.setState({ [data.name]: data.value });
     } else {
-      this.setState({ [e.target.name]: e.target.value })
+      this.setState({ [e.target.name]: e.target.value });
     }
-  }
+  };
 
   handleSubmit = async e => {
-    e.preventDefault()
-    this.props.signUp(this.state)
-  }
+    e.preventDefault();
+    this.props.signUp(this.state);
+  };
 
   handleSuccess = result => {
-    const imageUrl = result.filesUploaded[0].url
+    const imageUrl = result.filesUploaded[0].url;
 
-    this.setState({ profile_picture: imageUrl })
-  }
+    this.setState({ profile_picture: imageUrl });
+  };
 
   render() {
-    const { first_name, last_name, email, password, user_type, phone, city, sport } = this.state
-    const { isAuthenticated, isSignUpSuccess } = this.props
+    const {
+      first_name,
+      last_name,
+      email,
+      password,
+      user_type,
+      phone,
+      city,
+      sport
+    } = this.state;
+    const { isAuthenticated, isSignUpSuccess } = this.props;
 
     if (isAuthenticated) {
-      return <Redirect to="/user" />
+      return <Redirect to="/user" />;
     }
 
     if (isSignUpSuccess) {
-      return <Redirect to="/login" />
+      return <Redirect to="/login" />;
     }
 
     return (
@@ -133,7 +147,7 @@ class FormSignup extends Component {
                     label="Coach"
                     name="user_type"
                     value="coach"
-                    checked={user_type === 'coach'}
+                    checked={user_type === "coach"}
                     onChange={this.handleChange}
                   />
                 </Form.Field>
@@ -142,7 +156,7 @@ class FormSignup extends Component {
                     label="Student"
                     name="user_type"
                     value="student"
-                    checked={user_type === 'student'}
+                    checked={user_type === "student"}
                     onChange={this.handleChange}
                   />
                 </Form.Field>
@@ -170,9 +184,9 @@ class FormSignup extends Component {
                 buttonText="Upload Profile Picture"
                 buttonClass="upload-image-btn"
                 options={{
-                  accept: 'image/*',
+                  accept: "image/*",
                   storeTo: {
-                    location: 's3'
+                    location: "s3"
                   }
                 }}
                 onSuccess={this.handleSuccess}
@@ -188,16 +202,16 @@ class FormSignup extends Component {
           </Grid.Column>
         </Grid>
       </div>
-    )
+    );
   }
 }
 
 const maspStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
   isSignUpSuccess: state.auth.isSignUpSuccess
-})
+});
 
 export default connect(
   maspStateToProps,
   { signUp }
-)(FormSignup)
+)(FormSignup);

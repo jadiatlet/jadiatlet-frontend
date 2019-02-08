@@ -2,19 +2,24 @@ import React, { Fragment, Component } from "react";
 import { Grid, Button, Form, Segment, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 
-import { searchValue } from '../store/actions/search';
+import { searchValue } from "../store/actions/search";
 
 const countryOptions = [
-  { text: "Jakarta Selatan", value: "Jakarta Selatan" },
-  { text: "Jakarta Barat", value: "Jakarta Barat" },
-  { text: "Jakarta Timur", value: "Jakarta Timur" },
-  { text: "Depok", value: "Depok" }
+  { text: "Jakarta Raya", value: "Jakarta Raya" },
+  { text: "Bogor", value: "Bogor" },
+  { text: "Depok", value: "Depok" },
+  { text: "Tanggerang", value: "Tanggerang" },
+  { text: "Bekasi", value: "Bekasi" }
 ];
 
 const sportOptions = [
-  { text: "Lempar Kuda", value: "Lempar Kuda" },
-  { text: "Lompat Pendek", value: "Lompat Pendek" },
-  { text: "Angkat Kunam", value: "Angkat Kunam" }
+  { text: "Athletics", value: "Athletics" },
+  { text: "Socer", value: "Socer" },
+  { text: "Basket Ball", value: "Basket Ball" },
+  { text: "Skateboard", value: "Skateboard" },
+  { text: "Badmiton", value: "Badmiton" },
+  { text: "Tennis", value: "Tennis" },
+  { text: "Volleyball", value: "Volleyball" }
 ];
 
 class SearchBar extends Component {
@@ -22,14 +27,15 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       city: "",
-      sport: ""};
+      sport: ""
+    };
   }
 
   handleChange = (e, data) => {
     if (data) {
-      this.setState({[data.name]: data.value});
+      this.setState({ [data.name]: data.value });
     } else {
-      this.setState({[e.target.name]: e.target.value});
+      this.setState({ [e.target.name]: e.target.value });
     }
   };
 
@@ -40,7 +46,7 @@ class SearchBar extends Component {
   };
 
   render() {
-    const {city, sport} = this.state;
+    const { city, sport } = this.state;
 
     return (
       <Fragment>
@@ -50,7 +56,7 @@ class SearchBar extends Component {
               <Grid.Row columns={2}>
                 <Grid.Column>
                   <Form.Select
-                    name='city'
+                    name="city"
                     value={city}
                     onChange={this.handleChange}
                     label="Select your location"
@@ -60,7 +66,7 @@ class SearchBar extends Component {
                 </Grid.Column>
                 <Grid.Column>
                   <Form.Select
-                    name='sport'
+                    name="sport"
                     value={sport}
                     onChange={this.handleChange}
                     label="Select your sport"
@@ -72,7 +78,7 @@ class SearchBar extends Component {
 
               <Grid.Row>
                 <Grid.Column>
-                  <Button type='submit' color="teal" floated="right" animated>
+                  <Button type="submit" color="teal" floated="right" animated>
                     <Button.Content visible>Search</Button.Content>
                     <Button.Content hidden>
                       <Icon name="search" />
