@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import { Grid, Table, Segment, Label, Icon, Button, Divider } from 'semantic-ui-react'
+import { Grid, Table, Segment, Label, Icon, Divider } from 'semantic-ui-react'
+import Axios from 'axios'
+import Cookies from 'js-cookie'
 
 import { connect } from 'react-redux'
 import { getCourse } from '../../../store/actions/course'
@@ -7,11 +9,39 @@ import { getCourse } from '../../../store/actions/course'
 class TraineeContent extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      traineeList: []
+    }
   }
 
   componentDidMount() {
     this.props.getCourse({ ...this.props.user, coachId: this.props.user.id })
+
+    Axios.get(`${process.env.REACT_APP_API_URL}/courses/getUserCourse/${this.props.user.id}`).then(
+      response => {
+        if (response.status === 200) {
+          console.log(response.data.coachStudent[0].user_courses)
+          this.setState({ traineeList: response.data.coachStudent[0].user_courses })
+        }
+      }
+    )
+  }
+
+  handleStatus = (id, status) => {
+    const token = Cookies.get('token')
+    Axios.put(
+      `${process.env.REACT_APP_API_URL}/courses/accept`,
+      { id, status },
+      {
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    )
+      .then(response => {
+        if (response.status === 200) {
+          console.log(response)
+        }
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -80,28 +110,31 @@ class TraineeContent extends Component {
               </Table.Header>
 
               <Table.Body>
-                <Table.Row>
-                  <Table.Cell collapsing>Gatot Markunam</Table.Cell>
-                  <Table.Cell collapsing textAlign="right">
-                    <Label as="a">
-                      <Icon name="warning sign" />
-                      Pending
-                    </Label>
-                  </Table.Cell>
-                </Table.Row>
-
-                <Table.Row>
-                  <Table.Cell collapsing>Broto Gatel</Table.Cell>
-                  <Table.Cell collapsing textAlign="right">
-                    <Label as="a" color="olive">
-                      <Icon name="check circle" />
-                      Accepted
-                    </Label>
-                  </Table.Cell>
-                </Table.Row>
+                {this.state.traineeList.map((course, index) => {
+                  return (
+                    <Table.Row key={index}>
+                      <Table.Cell collapsing>
+                        {course.user.first_name} {course.user.last_name}
+                      </Table.Cell>
+                      <Table.Cell collapsing textAlign="right">
+                        {course.status === '0' ? (
+                          <Label as="a" onClick={() => this.handleStatus(course.id, '1')}>
+                            <Icon name="warning sign" />
+                            Pending
+                          </Label>
+                        ) : (
+                          <Label as="a" color="olive">
+                            <Icon name="warning sign" />
+                            Accepted
+                          </Label>
+                        )}
+                      </Table.Cell>
+                    </Table.Row>
+                  )
+                })}
               </Table.Body>
             </Table>
-            <Button negative>Delete</Button>
+            {/* <Button negative>Delete</Button> */}
           </Grid.Column>
         </Grid>
       </Fragment>

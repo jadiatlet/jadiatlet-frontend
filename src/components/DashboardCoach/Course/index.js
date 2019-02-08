@@ -33,9 +33,10 @@ class CourseUser extends Component {
       <Fragment>
         <Button name="search" as={Link} to="/search" positive content="Search New Course" />
         <Divider />
-        {this.state.courseList.map((course, index) => {
+        {/* {this.state.courseList.map((course, index) => {
           return <CourseContent courses={course} key={index} />
-        })}
+        })} */}
+        <CourseContent />
       </Fragment>
     )
   }

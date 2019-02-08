@@ -1,19 +1,19 @@
-import React, { Component, Fragment } from "react";
-import { Button } from "semantic-ui-react";
-import TraineeContent from "./TraineeContent";
+import React, { Component, Fragment } from 'react'
+import { Button } from 'semantic-ui-react'
+import TraineeContent from './TraineeContent'
 
-import AddCourseModal from "./AddCourseModal";
+import AddCourseModal from './AddCourseModal'
 
 class Trainee extends Component {
   constructor(props) {
-    super(props);
-    this.state = { open: false };
+    super(props)
+    this.state = { open: false }
   }
-  show = () => this.setState({ open: true });
-  close = () => this.setState({ open: false });
+  show = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
   render() {
-    const { open } = this.state;
+    const { open } = this.state
 
     return (
       <Fragment>
@@ -23,8 +23,8 @@ class Trainee extends Component {
         <TraineeContent />
         <AddCourseModal status={open} handleClose={this.close} />
       </Fragment>
-    );
+    )
   }
 }
 
-export default Trainee;
+export default Trainee
