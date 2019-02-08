@@ -44,8 +44,8 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
-  clip-path: polygon(0 0, 100% 0, 100% 46%, 0 70%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 70%);
 }
 
 .middle-style {
@@ -60,7 +60,7 @@
 }
 
 .background-style {
-  margin-top: -260px;
+  margin-top: -300px;
   background-image: url('/assets/home/boxing.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
