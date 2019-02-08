@@ -5,6 +5,7 @@ import Cookies from 'js-cookie'
 
 import { connect } from 'react-redux'
 import { getCourse } from '../../../store/actions/course'
+import { appointment } from '../../../store/actions/appointment'
 
 class TraineeContent extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class TraineeContent extends Component {
   }
 
   componentDidMount() {
-    this.props.getCourse({ ...this.props.user, coachId: this.props.user.id })
+    this.props.getCourse({ coachId: this.props.user.id })
 
     Axios.get(`${process.env.REACT_APP_API_URL}/courses/getUserCourse/${this.props.user.id}`).then(
       response => {
@@ -42,6 +43,27 @@ class TraineeContent extends Component {
         }
       })
       .catch(err => console.log(err))
+  }
+
+  acceptEnroll = async (e, id) => {
+    const token = Cookies.get('token')
+
+    await Axios.put(
+      `${process.env.REACT_APP_API_URL}/courses/accept`,
+      { id, status: '1' },
+      {
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    )
+
+    const response = await Axios.get(
+      `${process.env.REACT_APP_API_URL}/courses/getUserCourse/${this.props.user.id}`
+    )
+
+    if (response.status === 200) {
+      console.log(response.data.coachStudent[0].user_courses)
+      await this.setState({ traineeList: response.data.coachStudent[0].user_courses })
+    }
   }
 
   render() {
@@ -118,7 +140,7 @@ class TraineeContent extends Component {
                       </Table.Cell>
                       <Table.Cell collapsing textAlign="right">
                         {course.status === '0' ? (
-                          <Label as="a" onClick={() => this.handleStatus(course.id, '1')}>
+                          <Label as="a" onClick={e => this.acceptEnroll(e, course.id)}>
                             <Icon name="warning sign" />
                             Pending
                           </Label>
@@ -149,5 +171,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCourse }
+  { getCourse, appointment }
 )(TraineeContent)
