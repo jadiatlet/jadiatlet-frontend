@@ -3,7 +3,7 @@ import { Modal, Button, Form } from 'semantic-ui-react'
 import { DateInput, TimeInput } from 'semantic-ui-calendar-react'
 
 import { connect } from 'react-redux'
-import { addCourse } from '../../../store/actions/course'
+import { addCourse, getCourse } from '../../../store/actions/course'
 
 class AddCourseModal extends Component {
   constructor(props) {
@@ -30,8 +30,7 @@ class AddCourseModal extends Component {
 
   handleSumbit = async e => {
     e.preventDefault()
-    console.log(this.state)
-    this.props.addCourse({ ...this.state, coachId: this.props.user.id })
+    await this.props.addCourse({ ...this.state, coachId: this.props.user.id })
     this.setState({
       start_date: '',
       end_date: '',
@@ -58,7 +57,7 @@ class AddCourseModal extends Component {
 
     return (
       <Modal open={this.props.status} onClose={this.props.handleClose}>
-        <Modal.Header>Add / Edit Course</Modal.Header>
+        <Modal.Header>Add Course</Modal.Header>
 
         <Modal.Content>
           <Form onSubmit={this.handleSumbit}>
@@ -73,6 +72,7 @@ class AddCourseModal extends Component {
             <Form.Group widths="equal">
               <Form.Input
                 fluid
+                type="number"
                 label="Price"
                 placeholder="Price"
                 name="price"
@@ -139,7 +139,7 @@ class AddCourseModal extends Component {
             <Button type="submit" positive content="Submit">
               Submit
             </Button>
-            <Button positive content="Finish" onClick={this.props.handleClose}>
+            <Button color="youtube" content="Finish" onClick={this.props.handleClose}>
               Finish
             </Button>
           </Form>
@@ -156,5 +156,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addCourse }
+  { addCourse, getCourse }
 )(AddCourseModal)

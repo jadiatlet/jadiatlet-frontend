@@ -49,7 +49,7 @@ class CoachAchievements extends Component {
                   <Table.Row key={index}>
                     <Table.Cell>{index + 1}</Table.Cell>
                     <Table.Cell>{achievement.title}</Table.Cell>
-                    <Table.Cell>{achievement.year}</Table.Cell>
+                    <Table.Cell>{achievement.years}</Table.Cell>
                   </Table.Row>
                 )
               })}

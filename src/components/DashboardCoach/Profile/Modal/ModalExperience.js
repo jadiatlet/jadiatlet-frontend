@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Modal, Form, Button, Container, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-import { addCoachExperience } from '../../../../store/actions/coach'
+import { addCoachExperience, getCoachExperience } from '../../../../store/actions/coach'
 
 class ModalExperience extends Component {
   constructor(props) {
@@ -23,9 +23,9 @@ class ModalExperience extends Component {
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault()
-    this.props.addCoachExperience({ ...this.state, coachId: this.props.user.id })
+    await this.props.addCoachExperience({ ...this.state, coachId: this.props.user.id })
     this.setState({
       title: '',
       start_date: '',
@@ -88,5 +88,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addCoachExperience }
+  { addCoachExperience, getCoachExperience }
 )(ModalExperience)
