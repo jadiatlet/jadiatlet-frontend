@@ -5,7 +5,6 @@ import Cookies from 'js-cookie'
 
 import { connect } from 'react-redux'
 import { getCourse } from '../../../store/actions/course'
-import { appointment } from '../../../store/actions/appointment'
 
 class TraineeContent extends Component {
   constructor(props) {
@@ -26,23 +25,6 @@ class TraineeContent extends Component {
         }
       }
     )
-  }
-
-  handleStatus = (id, status) => {
-    const token = Cookies.get('token')
-    Axios.put(
-      `${process.env.REACT_APP_API_URL}/courses/accept`,
-      { id, status },
-      {
-        headers: { Authorization: `Bearer ${token}` }
-      }
-    )
-      .then(response => {
-        if (response.status === 200) {
-          console.log(response)
-        }
-      })
-      .catch(err => console.log(err))
   }
 
   acceptEnroll = async (e, id) => {
@@ -171,5 +153,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCourse, appointment }
+  { getCourse }
 )(TraineeContent)
