@@ -21,7 +21,7 @@ const sportOptions = [
   { text: "Socer", value: "Socer" },
   { text: "Basket Ball", value: "Basket Ball" },
   { text: "Skateboard", value: "Skateboard" },
-  { text: "Badmiton", value: "Badmiton" },
+  { text: "Badminton", value: "Badminton" },
   { text: "Tennis", value: "Tennis" },
   { text: "Volleyball", value: "Volleyball" }
 ];
