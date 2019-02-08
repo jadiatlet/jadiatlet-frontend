@@ -1,54 +1,46 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react'
+import { connect } from 'react-redux'
 
-import {
-  Container,
-  Tab,
-  Segment,
-  Image,
-  Divider,
-  Header,
-  Label
-} from "semantic-ui-react";
-import { Redirect } from "react-router-dom";
+import { Container, Tab, Segment, Image, Divider, Header, Label } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom'
 
-import InnerFooter from "../InnerFooter";
-import Trainee from "./Trainee";
-import CourseUser from "./Course/index";
-import ProfileUser from "./Profile";
+import InnerFooter from '../InnerFooter'
+import Trainee from './Trainee'
+// import CourseUser from "./Course/index";
+import ProfileUser from './Profile'
 
-import NavbarSticky from "../NavbarSticky";
+import NavbarSticky from '../NavbarSticky'
 
 const panes = [
   {
-    menuItem: "Trainee",
+    menuItem: 'Trainee',
     render: () => (
       <Tab.Pane>
         <Trainee />
       </Tab.Pane>
     )
   },
+  // {
+  //   menuItem: "Course",
+  //   render: () => (
+  //     <Tab.Pane>
+  //       <CourseUser />
+  //     </Tab.Pane>
+  //   )
+  // },
   {
-    menuItem: "Course",
-    render: () => (
-      <Tab.Pane>
-        <CourseUser />
-      </Tab.Pane>
-    )
-  },
-  {
-    menuItem: "Profile",
+    menuItem: 'Profile',
     render: () => (
       <Tab.Pane>
         <ProfileUser />
       </Tab.Pane>
     )
   }
-];
+]
 
 const DashboardCoach = props => {
-  if (!props.isAuthenticated || props.user.user_type !== "Coach") {
-    return <Redirect to="/" />;
+  if (!props.isAuthenticated || props.user.user_type !== 'Coach') {
+    return <Redirect to="/" />
   }
 
   return (
@@ -56,11 +48,7 @@ const DashboardCoach = props => {
       <Container>
         <NavbarSticky />
         <Segment vertical textAlign="center">
-          <Image
-            size="small"
-            src={props.user && props.user.profile_picture}
-            avatar
-          />
+          <Image size="small" src={props.user && props.user.profile_picture} avatar />
           <Header as="h2">
             <Header.Content>
               {`${props.user && props.user.first_name} `}
@@ -78,12 +66,12 @@ const DashboardCoach = props => {
         <InnerFooter />
       </Container>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
   user: state.auth.user
-});
+})
 
-export default connect(mapStateToProps)(DashboardCoach);
+export default connect(mapStateToProps)(DashboardCoach)

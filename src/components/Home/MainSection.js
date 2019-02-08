@@ -1,49 +1,63 @@
-// import React, { Component } from "react";
-import React from "react";
-import { Grid, Button, Header, Icon } from "semantic-ui-react";
+import React, { Component } from 'react'
+import { Grid, Button, Header, Icon } from 'semantic-ui-react'
 // import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
-import NavbarSticky from "../NavbarSticky";
-import "./index.css";
+import NavbarSticky from '../NavbarSticky'
+import './index.css'
 
-const MainSection = () => {
-  return (
-    <div className="homeBackground">
-      <NavbarSticky />
-      <Grid centered columns={2}>
-        <Grid.Column className="form-style" floated="left">
-          <div className="container-FormOnHome">
-            <Header className="section-title" as="h1">
-              Ready for Jadi Atlet ?
-            </Header>
+class MainSection extends Component {
+  state = {}
 
-            <Grid>
-              <Grid.Row>
-                <Grid.Column>
-                  <Button
-                    color="teal"
-                    floated="left"
-                    animated
-                    as={Link}
-                    to="/search"
-                  >
-                    <Button.Content visible>Search New Course</Button.Content>
-                    <Button.Content hidden>
-                      <Icon name="search" />
-                    </Button.Content>
-                  </Button>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </div>
-        </Grid.Column>
-      </Grid>
-    </div>
-  );
-};
+  handleClick = () => {
+    Swal.fire({
+      type: 'error',
+      title: 'Warning...',
+      text: 'You have to Sign Up or Log In First!'
+      // footer: '<a href>Why do I have this issue?</a>'
+    })
+  }
 
-export default MainSection;
+  render() {
+    return (
+      <div className="homeBackground">
+        <NavbarSticky />
+        <Grid centered columns={2}>
+          <Grid.Column className="form-style" floated="left">
+            <div className="container-FormOnHome">
+              <Header className="section-title" as="h1">
+                Ready for Jadi Atlet ?
+              </Header>
+
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column>
+                    <Button
+                      color="teal"
+                      floated="left"
+                      animated
+                      as={Link}
+                      to="/search"
+                      onClick={this.handleClick}
+                    >
+                      <Button.Content visible>Search New Course</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name="search" />
+                      </Button.Content>
+                    </Button>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </div>
+          </Grid.Column>
+        </Grid>
+      </div>
+    )
+  }
+}
+
+export default MainSection
 
 // class MainSection extends Component {
 //   state = {

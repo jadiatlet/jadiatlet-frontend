@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { Segment, Grid, Image, Icon, Button, List, Table, ListItem } from 'semantic-ui-react'
 import Axios from 'axios'
 import Cookies from 'js-cookie'
+import { connect } from 'react-redux'
+import Swal from 'sweetalert2'
 
 import './Guess.css'
 
@@ -12,23 +15,36 @@ class SearchResult extends Component {
   }
 
   handleClick = id_course => {
-    const token = Cookies.get('token')
-    Axios.post(
-      `${process.env.REACT_APP_API_URL}/courses/join`,
-      { id_course },
-      {
-        headers: { Authorization: `Bearer ${token}` }
-      }
-    )
-      .then(response => {
-        if (response.status === 200) {
-          console.log(response)
+    if (this.props.user) {
+      const token = Cookies.get('token')
+      Axios.post(
+        `${process.env.REACT_APP_API_URL}/courses/join`,
+        { id_course },
+        {
+          headers: { Authorization: `Bearer ${token}` }
         }
-      })
-      .catch(err => console.log(err))
+      )
+        .then(response => {
+          if (response.status === 200) {
+            console.log(response)
+          }
+        })
+        .catch(err => console.log(err))
+    }
+    Swal.fire('Course Added!', 'Back to Profile Page!', 'success')
   }
+
   render() {
-    const { user } = this.props
+    const { user, isAuthenticated } = this.props
+
+    // if (isAuthenticated) {
+    //   return <Redirect to="/user" />
+    // }
+
+    // if (!isAuthenticated) {
+    //   return <Redirect to="/login" />
+    // }
+
     return (
       <Segment>
         <Grid columns={2}>
@@ -44,8 +60,8 @@ class SearchResult extends Component {
                     <h5 className="guest-subtitle-name">{user.sport}</h5>
                   </ListItem>
                 </List>
-                {user.courses.map(course => (
-                  <Segment>
+                {user.courses.map((course, index) => (
+                  <Segment key={index}>
                     <h3>Course Description</h3>
                     <p>{course.description}</p>
                     <Table basic="very">
@@ -142,4 +158,8 @@ class SearchResult extends Component {
   }
 }
 
-export default SearchResult
+const maspStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(maspStateToProps)(SearchResult)
