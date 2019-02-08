@@ -69,7 +69,11 @@ class TraineeContent extends Component {
                             <Icon name="money" />
                             Price
                           </Table.Cell>
-                          <Table.Cell>{`Rp. ${course.price}`}</Table.Cell>
+                          <Table.Cell>
+                            <Label circular color="grey">
+                              {`Rp. ${course.price}`}
+                            </Label>
+                          </Table.Cell>
                         </Table.Row>
 
                         <Table.Row>
@@ -128,7 +132,7 @@ class TraineeContent extends Component {
                           </Label>
                         ) : (
                           <Label as="a" color="olive">
-                            <Icon name="warning sign" />
+                            <Icon name="check circle" />
                             Accepted
                           </Label>
                         )}
