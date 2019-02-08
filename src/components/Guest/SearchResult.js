@@ -1,5 +1,14 @@
 import React from "react";
-import { Segment, Grid, Image, Icon, Button } from "semantic-ui-react";
+import {
+  Segment,
+  Grid,
+  Image,
+  Icon,
+  Button,
+  List,
+  Table,
+  ListItem
+} from "semantic-ui-react";
 
 import "./Guess.css";
 
@@ -8,35 +17,97 @@ const SearchResult = ({ user }) => {
     <Segment>
       <Grid columns={2}>
         <Grid.Row stretched>
-          <Grid.Column textAlign="center" width={8}>
+          <Grid.Column width={8}>
             <Segment>
-              <Image src={user.profile_picture} size="small" avatar />
-              <h1 className="guest-title-style">{user.first_name}</h1>
-              <h2 className="guest-subtitle-style">{user.sport}</h2>
+              <List horizontal>
+                <ListItem>
+                  <Image src={user.profile_picture} size="tiny" avatar />
+                </ListItem>
+                <ListItem>
+                  <h1 className="guest-title-name">{user.first_name}</h1>
+                  <h5 className="guest-subtitle-name">{user.sport}</h5>
+                </ListItem>
+              </List>
+              {user.courses.map(course => (
+                <Segment>
+                  <h3>Course Description</h3>
+                  <p>{course.description}</p>
+                  <Table basic="very">
+                    <Table.Body>
+                      <Table.Row>
+                        <Table.Cell>
+                          <Icon name="money" />
+                          Price
+                        </Table.Cell>
+                        <Table.Cell>{`Rp. ${course.price}`}</Table.Cell>
+                      </Table.Row>
+
+                      <Table.Row>
+                        <Table.Cell>
+                          <Icon name="calendar check outline" />
+                          Course Duration
+                        </Table.Cell>
+                        <Table.Cell>{`${course.start_date} - ${
+                          course.end_date
+                        }`}</Table.Cell>
+                      </Table.Row>
+
+                      <Table.Row>
+                        <Table.Cell>
+                          <Icon name="time" />
+                          Time
+                        </Table.Cell>
+                        <Table.Cell>
+                          {`${course.day}, ${course.start_hour} - ${
+                            course.end_hour
+                          }`}
+                        </Table.Cell>
+                      </Table.Row>
+
+                      <Table.Row>
+                        <Table.Cell>
+                          <Icon name="map marker alternate" />
+                          Venue
+                        </Table.Cell>
+                        <Table.Cell>{course.venue}</Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table>
+                </Segment>
+              ))}
             </Segment>
+            {/* <Grid.Column floated="left" /> */}
           </Grid.Column>
           <Grid.Column width={8} floated="right">
             <Segment>
-              <h1 className="guest-title-style">Achievement</h1>
-              <ul>
-                {user.coach_achievements.slice(1).map(achievement => (
-                  <li>
-                    <h4 className="guest-subtitle-style">
+              <h2 className="guest-title-style">
+                <Icon color="yellow" name="trophy" /> Achievement
+              </h2>
+              <List>
+                {user.coach_achievements.map(achievement => (
+                  <List.Item>
+                    <h5 className="guest-subtitle-style">
+                      <Icon color="teal" name="right triangle" />
                       {achievement.title}
-                    </h4>
-                  </li>
+                    </h5>
+                  </List.Item>
                 ))}
-              </ul>
+              </List>
             </Segment>
             <Segment>
-              <h1 className="guest-title-style">Experience</h1>
-              <ul>
-                {user.coach_experiences.slice(1).map(experience => (
-                  <li>
-                    <h4 className="guest-subtitle-style">{experience.title}</h4>
-                  </li>
+              <h2 className="guest-title-style">
+                <Icon color="yellow" name="star" /> Experience
+              </h2>
+              <List>
+                {user.coach_experiences.map(experience => (
+                  <List.Item>
+                    <h5 className="guest-subtitle-style">
+                      <Icon color="teal" name="right triangle" />
+                      {experience.title}
+                    </h5>
+                  </List.Item>
                 ))}
-              </ul>
+              </List>
             </Segment>
             <div>
               <Button floated="right" color="teal" animated="fade">
