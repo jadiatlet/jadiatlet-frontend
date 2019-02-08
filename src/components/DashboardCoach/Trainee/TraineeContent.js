@@ -15,7 +15,7 @@ class TraineeContent extends Component {
   }
 
   render() {
-    console.log(this.props.course.course)
+    // console.log(this.props.course.course)
     return (
       <Fragment>
         <Divider />
@@ -93,7 +93,7 @@ class TraineeContent extends Component {
                 <Table.Row>
                   <Table.Cell collapsing>Broto Gatel</Table.Cell>
                   <Table.Cell collapsing textAlign="right">
-                    <Label as="a">
+                    <Label as="a" color="olive">
                       <Icon name="check circle" />
                       Accepted
                     </Label>
