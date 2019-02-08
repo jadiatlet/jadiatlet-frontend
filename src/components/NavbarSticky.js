@@ -60,7 +60,7 @@ class NavbarSticky extends Component {
             </Menu.Item>
             <Menu.Item
               name="home"
-              active={activeItem === '' || activeItem === '/'}
+              // active={activeItem === '' || activeItem === '/'}
               onClick={this.handleItemClick}
               as={Link}
               to="/"
