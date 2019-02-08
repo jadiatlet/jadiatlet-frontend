@@ -17,7 +17,7 @@ const LogIn = () => {
             <Grid centered columns={2}>
               <Grid.Column floated="left">
                 <div className="header-login">
-                  <h1>Gak Login Gua Tabok lu !</h1>
+                  <h1>Login to Your Account Hire</h1>
                   <h3>Train, Practice, be a Professioanl Athlete, Now...</h3>
                 </div>
               </Grid.Column>
