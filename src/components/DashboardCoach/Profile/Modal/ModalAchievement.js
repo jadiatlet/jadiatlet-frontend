@@ -59,6 +59,10 @@ class ModalAchievement extends Component {
                   <Icon name="add" />
                   Add
                 </Button>
+                <Button color="youtube" content="Finish" onClick={this.props.handleClose}>
+                  <Icon name="check" />
+                  Finish
+                </Button>
               </Container>
             </Form>
           </Modal.Description>

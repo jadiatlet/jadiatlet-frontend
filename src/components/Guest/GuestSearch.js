@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import { Container } from "semantic-ui-react";
-import { connect } from "react-redux";
+import React, { Component } from 'react'
+import { Container } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
-import NavbarSticky from "../NavbarSticky";
-import SearchBar from "../SearchBar";
-import SearchResult from "./SearchResult";
-import Footer from "../InnerFooter";
+import NavbarSticky from '../NavbarSticky'
+import SearchBar from '../SearchBar'
+import SearchResult from './SearchResult'
+import Footer from '../InnerFooter'
 
-import "./Guess.css";
+import './Guess.css'
 
 class GuestSearch extends Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super(props)
+    this.state = {}
   }
   render() {
-    const { results } = this.props;
+    const { results } = this.props
 
     return (
       <div className="guest-style">
@@ -27,12 +27,12 @@ class GuestSearch extends Component {
         </Container>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = store => ({
   results: store.search.results
-});
+})
 
-export default connect(mapStateToProps)(GuestSearch);
+export default connect(mapStateToProps)(GuestSearch)
