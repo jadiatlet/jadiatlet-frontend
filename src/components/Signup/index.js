@@ -15,7 +15,7 @@ const SignUp = () => {
             <Grid centered columns={2}>
               <Grid.Column floated="left">
                 <div className="header-signup">
-                  <h1>Create an Account Hire</h1>
+                  <h1>Create an Account Here</h1>
                   <h3>Heroes journey, start from here..</h3>
                 </div>
               </Grid.Column>
