@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
 import { logIn, setSignUpStatus } from '../../store/actions/auth'
 import { Button, Form, Grid, Message } from 'semantic-ui-react'
+import Swal from 'sweetalert2'
 
 class LoginForm extends Component {
   state = { email: '', password: '' }
@@ -20,6 +21,7 @@ class LoginForm extends Component {
   handleSubmit = async e => {
     e.preventDefault()
     this.props.logIn(this.state)
+    Swal.fire('Welcome!', 'Log In Success', 'success')
   }
 
   render() {
@@ -38,7 +40,7 @@ class LoginForm extends Component {
       <div>
         <Grid textAlign="center" verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Message header="Welcome Back Bitch!" content="Login to Your Account" />
+            <Message header="Welcome Back!" content="Login to Your Account" />
             <Form onSubmit={this.handleSubmit}>
               <Form.Input
                 fluid

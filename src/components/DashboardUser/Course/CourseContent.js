@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Divider, Table, Label, Header, Icon, Grid, Segment, Button } from 'semantic-ui-react'
+import { Divider, Table, Label, Header, Icon, Grid, Segment } from 'semantic-ui-react'
 
 const CourseContent = props => {
   const { course } = props.courses

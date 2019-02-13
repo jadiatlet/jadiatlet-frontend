@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import { Segment, Grid, Image, Icon, Button, List, Table, ListItem } from 'semantic-ui-react'
+// import { Redirect } from 'react-router-dom'
+import { Segment, Grid, Image, Icon, Button, List, Table, ListItem, Label } from 'semantic-ui-react'
 import Axios from 'axios'
 import Cookies from 'js-cookie'
 import { connect } from 'react-redux'
@@ -71,7 +71,9 @@ class SearchResult extends Component {
                             <Icon name="money" />
                             Price
                           </Table.Cell>
-                          <Table.Cell>{`Rp. ${course.price}`}</Table.Cell>
+                          <Table.Cell>
+                            <Label circular color="grey">{`Rp. ${course.price}`}</Label>
+                          </Table.Cell>
                         </Table.Row>
 
                         <Table.Row>
@@ -112,8 +114,8 @@ class SearchResult extends Component {
                   <Icon color="yellow" name="trophy" /> Achievement
                 </h2>
                 <List>
-                  {user.coach_achievements.map(achievement => (
-                    <List.Item>
+                  {user.coach_achievements.map((achievement, index) => (
+                    <List.Item key={index}>
                       <h5 className="guest-subtitle-style">
                         <Icon color="teal" name="right triangle" />
                         {achievement.title}
@@ -127,8 +129,8 @@ class SearchResult extends Component {
                   <Icon color="yellow" name="star" /> Experience
                 </h2>
                 <List>
-                  {user.coach_experiences.map(experience => (
-                    <List.Item>
+                  {user.coach_experiences.map((experience, index) => (
+                    <List.Item key={index}>
                       <h5 className="guest-subtitle-style">
                         <Icon color="teal" name="right triangle" />
                         {experience.title}

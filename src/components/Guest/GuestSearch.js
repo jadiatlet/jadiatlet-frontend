@@ -23,7 +23,7 @@ class GuestSearch extends Component {
 
         <Container>
           <SearchBar />
-          {results && results.users.map(user => <SearchResult user={user} />)}
+          {results && results.users.map((user, index) => <SearchResult user={user} key={index} />)}
         </Container>
         <Footer />
       </div>
